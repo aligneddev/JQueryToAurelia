@@ -40,6 +40,8 @@
   },
 
   "buildOptions": {
+    // https://dzone.com/articles/how-to-debug-net-core-rc2-apps-with-visual-studio
+    "debugType": "portable",
     "emitEntryPoint": true,
     "preserveCompilationContext": true
   },
