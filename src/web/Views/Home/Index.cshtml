@@ -1,21 +1,31 @@
 @{
     ViewData["Title"] = "Home Page";
 }
-
+<div class="row">
+  <!--<button id="filter">Filter</button>-->
+</div>
 <div class="row">
   <div class="container">
 	<div class="row">
-  
       	<div class="table-responsive">
         <table class="table table-condensed table-hover">
           <thead>
             <tr>
               <th>#</th>
               <th>Country</th>
-
             </tr>
           </thead>
           <tbody>
           </tbody>
         </table>
 </div>
+
+@section scripts {
+<script>
+  $(function(){
+    $.getJson('api/solar').then(function(data){
+      debugger;
+    });
+  });
+  </script>
+}
