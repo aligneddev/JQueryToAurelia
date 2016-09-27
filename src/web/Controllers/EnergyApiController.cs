@@ -1,33 +1,52 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.FileProviders;
+using Newtonsoft.Json;
 
-[Route("api/energy")]
-public class EnergyApiController : Controller
+namespace jQueryToAurelia.Web.Controllers
 {
-    private readonly IHostingEnvironment  _appEnvironment;
-    private readonly IFileProvider _fileProvider;
-    public EnergyApiController (IHostingEnvironment  appEnvironment, IFileProvider fileProvider)
-    {
-       _appEnvironment = appEnvironment;
-       _fileProvider = fileProvider;
-    }
+	public class EnergyApiController : Controller
+	{
+		private readonly IHostingEnvironment _appEnvironment;
+		private readonly IFileProvider _fileProvider;
 
-    [HttpGet]
-    public IActionResult Solar(){
-        var year = 2000;
-         var rootPath = _appEnvironment.;
-         // https://docs.asp.net/en/latest/fundamentals/file-providers.html?highlight=files#recommendations-for-use-in-apps
-        var jsonPath = rootPath + "data/solarEnergy2000.json";
-        JObject o1 = Newtownsoft.JObject.Parse(this._fileProvider.ReadAllText(jsonPath));
-        return new Ok(o1);
-    }
+		public EnergyApiController(IHostingEnvironment appEnvironment, IFileProvider fileProvider)
+		{
+			this._appEnvironment = appEnvironment;
+			this._fileProvider = fileProvider;
+		}
+
+		[HttpGet]
+		public async Task<IActionResult> Solar()
+		{
+			const int year = 2000;
+			var rootPath = this._appEnvironment.ContentRootPath;
+			// https://docs.asp.net/en/latest/fundamentals/file-providers.html?highlight=files#recommendations-for-use-in-apps
+			var jsonPath = $@"{rootPath}\data\SolarEnergy{year}.json";
+			var json = await this.ReadTextAsync(jsonPath);
+
+			var energyData = JsonConvert.DeserializeObject<EnergyData>(json);
+			return new ObjectResult(energyData);
+		}
+
+		private async Task<string> ReadTextAsync(string filePath)
+		{
+			using (var sourceStream = this._fileProvider.GetFileInfo(filePath).CreateReadStream())
+			{
+				var sb = new StringBuilder();
+
+				var buffer = new byte[0x1000];
+				int numRead;
+				while ((numRead = await sourceStream.ReadAsync(buffer, 0, buffer.Length)) != 0)
+				{
+					var text = Encoding.Unicode.GetString(buffer, 0, numRead);
+					sb.Append(text);
+				}
+
+				return sb.ToString();
+			}
+		}
+	}
 }
