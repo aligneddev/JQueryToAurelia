@@ -22,9 +22,9 @@ namespace jQueryToAurelia.Web.Controllers
 		public async Task<IActionResult> Solar()
 		{
 			const int year = 2000;
-			var rootPath = this._appEnvironment.ContentRootPath;
+
 			// https://docs.asp.net/en/latest/fundamentals/file-providers.html?highlight=files#recommendations-for-use-in-apps
-			var jsonPath = $@"{rootPath}\data\SolarEnergy{year}.json";
+			var jsonPath = $@"data\SolarEnergy{year}.json";
 			var json = await this.ReadTextAsync(jsonPath);
 
 			var energyData = JsonConvert.DeserializeObject<EnergyData>(json);
@@ -36,12 +36,11 @@ namespace jQueryToAurelia.Web.Controllers
 			using (var sourceStream = this._fileProvider.GetFileInfo(filePath).CreateReadStream())
 			{
 				var sb = new StringBuilder();
-
-				var buffer = new byte[0x1000];
+				var buffer = new byte[500];
 				int numRead;
 				while ((numRead = await sourceStream.ReadAsync(buffer, 0, buffer.Length)) != 0)
 				{
-					var text = Encoding.Unicode.GetString(buffer, 0, numRead);
+					var text = Encoding.ASCII.GetString(buffer, 0, numRead);
 					sb.Append(text);
 				}
 

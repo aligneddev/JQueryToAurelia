@@ -31,8 +31,9 @@ namespace jQueryToAurelia.Web
             // Add framework services.
             services.AddMvc();
 
+			// Setup Dependency Injection
 			var physicalProvider = this._hostingEnvironment.ContentRootFileProvider;
-	        services.AddSingleton<IFileProvider>(physicalProvider);
+	        services.AddSingleton(physicalProvider);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
