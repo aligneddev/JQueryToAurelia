@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.FileProviders;
 using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace jQueryToAurelia.Web.Controllers
 {
@@ -27,7 +28,7 @@ namespace jQueryToAurelia.Web.Controllers
 			var jsonPath = $@"data\SolarEnergy{year}.json";
 			var json = await this.ReadTextAsync(jsonPath);
 
-			var energyData = JsonConvert.DeserializeObject<EnergyData>(json);
+			var energyData = JsonConvert.DeserializeObject<List<EnergyData>>(json);
 			return new ObjectResult(energyData);
 		}
 
