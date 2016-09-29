@@ -1,3 +1,4 @@
+using System;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -25,9 +26,17 @@ namespace jQueryToAurelia.Web.Controllers
 			// https://docs.asp.net/en/latest/fundamentals/file-providers.html?highlight=files#recommendations-for-use-in-apps
 			var jsonPath = $@"data\SolarEnergy{year}.json";
 			var json = await this.ReadTextAsync(jsonPath);
-
+			try
+			{
 			var energyData = JsonConvert.DeserializeObject<List<EnergyData>>(json);
 			return new ObjectResult(energyData);
+
+			}
+			catch (Exception ex)
+			{
+				
+				throw;
+			}
 		}
 
 		private async Task<string> ReadTextAsync(string filePath)
