@@ -8,14 +8,12 @@ using System.Collections.Generic;
 
 namespace jQueryToAurelia.Web.Controllers
 {
-	public class EnergyApiController : Controller
+	public class EnergyController : Controller
 	{
-		private readonly IHostingEnvironment _appEnvironment;
 		private readonly IFileProvider _fileProvider;
 
-		public EnergyApiController(IHostingEnvironment appEnvironment, IFileProvider fileProvider)
+		public EnergyController(IFileProvider fileProvider)
 		{
-			this._appEnvironment = appEnvironment;
 			this._fileProvider = fileProvider;
 		}
 
