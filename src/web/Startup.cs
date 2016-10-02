@@ -2,21 +2,26 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Logging;
 
 namespace jQueryToAurelia.Web
 {
     public class Startup
     {
-        public Startup(IHostingEnvironment env)
+	    private IHostingEnvironment _hostingEnvironment;
+
+	    public Startup(IHostingEnvironment env)
         {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
-            Configuration = builder.Build();
-        }
+	        this.Configuration = builder.Build();
+
+	        this._hostingEnvironment = env;
+		}
 
         public IConfigurationRoot Configuration { get; }
 
@@ -25,12 +30,16 @@ namespace jQueryToAurelia.Web
         {
             // Add framework services.
             services.AddMvc();
+
+			// Setup Dependency Injection
+			var physicalProvider = this._hostingEnvironment.ContentRootFileProvider;
+	        services.AddSingleton(physicalProvider);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+            loggerFactory.AddConsole(this.Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
             if (env.IsDevelopment())
@@ -50,6 +59,11 @@ namespace jQueryToAurelia.Web
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
+
+	            routes.MapRoute(
+		            name: "api",
+		            template: "api/{controller}/{action}");
+
             });
         }
     }

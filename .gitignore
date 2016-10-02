@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/src/node_modules
+/src/tests/WebTests/bin/Debug/netcoreapp1.0
+/src/tests/WebTests/obj/Debug/netcoreapp1.0
+/src/WebTests/obj/Debug
+/src/WebTests/Properties

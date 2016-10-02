@@ -5,3 +5,11 @@ I've talked to many who complain about JavaScript and don't view it as real deve
 In this talk, I'll start from a jQuery driven UI (grid with filtering) and move through steps to clean up the code. We'll look at OOP, inversion of control approaches, TypeScript, Jasmine (unit testing). Then we'll convert jQuery code into KnockoutJs to see how data-binding tools can help reduce DOM manipulations and simplify code. If there's time we'll touch on RequireJs (module loading) and show the same solution in Aurelia (a framework that does even more for us).
 
 This is a tall order for an hour, so we'll have to move quickly through the code changes, but I think you'll see the benefits of treating JavaScript like a real language.
+
+
+#Server
+ - ASP.Net MVC Core
+ - xunit for tests: https://docs.microsoft.com/en-us/dotnet/articles/core/testing/unit-testing-with-dotnet-test
+  
+Using Data from https://api.datamarket.azure.com/UnitedNations/Energy/ with my free subscription key. I'm storing some in JSON files and then serving them from MVC.
+
