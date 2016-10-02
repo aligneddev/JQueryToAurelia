@@ -1,4 +1,4 @@
-For my SD Code Camp 2016 (http://www.southdakotacodecamp.com) talk.
+For my SD Code Camp November 6th, 2016 (http://www.southdakotacodecamp.com/sessions/clean-javascript,4) talk (probably only active until 2017, see text below).
 
 I've talked to many who complain about JavaScript and don't view it as real development. Web development continues to grow and along with that comes larger JavaScript applications and a never ending flow of new frameworks and tools. Based on my experience this summer with interns (http://geekswithblogs.net/Aligned/archive/2016/08/24/teaching-javascript.aspx) and over the last years of working on a large JavaScript driven application, I've learned that JavaScript code can be readable and maintainable using methodologies that we've adopted in C#, Java etc. SOLID principles, good naming practices and Object Orientated can all be used to create JavaScript applications.
 
