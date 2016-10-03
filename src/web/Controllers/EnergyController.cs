@@ -2,14 +2,13 @@ using System;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.FileProviders;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 
 namespace jQueryToAurelia.Web.Controllers
 {
-	public class EnergyController : Controller
+    public class EnergyController : Controller
 	{
 		private readonly IFileProvider _fileProvider;
 
@@ -28,13 +27,11 @@ namespace jQueryToAurelia.Web.Controllers
 			var json = await this.ReadTextAsync(jsonPath);
 			try
 			{
-			var energyData = JsonConvert.DeserializeObject<List<EnergyData>>(json);
-			return new ObjectResult(energyData);
-
+				var energyData = JsonConvert.DeserializeObject<List<EnergyData>>(json);
+				return new ObjectResult(energyData);
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
-				
 				throw;
 			}
 		}
