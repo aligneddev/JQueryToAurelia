@@ -18,9 +18,9 @@ namespace jQueryToAurelia.Web.Controllers
 		}
 
 		[HttpGet]
-		public async Task<IActionResult> Solar()
+		public async Task<IActionResult> Solar(int year)
 		{
-			const int year = 2000;
+			year = year == 0 ? 2000 : year;
 
 			// https://docs.asp.net/en/latest/fundamentals/file-providers.html?highlight=files#recommendations-for-use-in-apps
 			var jsonPath = $@"data\SolarEnergy{year}.json";
