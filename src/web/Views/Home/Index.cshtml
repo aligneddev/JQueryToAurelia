@@ -6,19 +6,23 @@
 </div>
 <div class="row">
   Energy information from: https://datamarket.azure.com/browse/data?price=free, https://api.datamarket.azure.com/UnitedNations/Energy/
+  <br />
+  Units in <span id="unit"></span>
 </div>
 <div class="row">
   <!--<button id="filter">Filter</button>-->
 </div>
-<div class="row">
+
+<div class="row" style="margin-top: 20px;">
   <div class="container">
     <div class="row">
           <div class="table-responsive">
-          <table class="table table-condensed table-hover">
+          <table id="dataTable" class="table table-condensed table-hover">
             <thead>
               <tr>
                 <th>#</th>
                 <th>Country</th>
+                <th>Quantity</th>
               </tr>
             </thead>
             <tbody>
@@ -33,7 +37,14 @@
 <script>
   $(function(){
     $.getJSON('api/energy/solar').then(function(data){
-      debugger;
+      $('#unit').text(data[0].unit);
+       $('#dataTable tbody tr').remove().end();
+       $.each(data, function(key, item){
+         $('#dataTable > tbody:last-child').append('<tr>'
+                + '<td>' + item.countryId + '</td>'
+                + '<td>' + item.countryName + '</td>'
+                + '<td>' + item.quantity + '</td>');
+       });
     });
   });
   </script>
