@@ -9,48 +9,59 @@ using System.Collections.Generic;
 namespace jQueryToAurelia.Web.Controllers
 {
     public class EnergyController : Controller
-	{
-		private readonly IFileProvider _fileProvider;
+    {
+        private readonly IFileProvider _fileProvider;
 
-		public EnergyController(IFileProvider fileProvider)
-		{
-			this._fileProvider = fileProvider;
-		}
+        public EnergyController(IFileProvider fileProvider)
+        {
+            this._fileProvider = fileProvider;
+        }
 
-		[HttpGet]
-		public async Task<IActionResult> Solar(int year)
-		{
-			year = year == 0 ? 2000 : year;
+        [HttpGet]
+        public IActionResult YearOptions()
+        {
+            return new OkObjectResult(new List<string>{
+					"all",
+					"1990",
+					"2000",
+					"2007"
+			});
+        }
 
-			// https://docs.asp.net/en/latest/fundamentals/file-providers.html?highlight=files#recommendations-for-use-in-apps
-			var jsonPath = $@"data\SolarEnergy{year}.json";
-			var json = await this.ReadTextAsync(jsonPath);
-			try
-			{
-				var energyData = JsonConvert.DeserializeObject<List<EnergyData>>(json);
-				return new ObjectResult(energyData);
-			}
-			catch (Exception)
-			{
-				throw;
-			}
-		}
+        [HttpGet]
+        public async Task<IActionResult> Solar(int year)
+        {
+            year = year == 0 ? 2000 : year;
 
-		private async Task<string> ReadTextAsync(string filePath)
-		{
-			using (var sourceStream = this._fileProvider.GetFileInfo(filePath).CreateReadStream())
-			{
-				var sb = new StringBuilder();
-				var buffer = new byte[500];
-				int numRead;
-				while ((numRead = await sourceStream.ReadAsync(buffer, 0, buffer.Length)) != 0)
-				{
-					var text = Encoding.ASCII.GetString(buffer, 0, numRead);
-					sb.Append(text);
-				}
+            // https://docs.asp.net/en/latest/fundamentals/file-providers.html?highlight=files#recommendations-for-use-in-apps
+            var jsonPath = $@"data\SolarEnergy{year}.json";
+            var json = await this.ReadTextAsync(jsonPath);
+            try
+            {
+                var energyData = JsonConvert.DeserializeObject<List<EnergyData>>(json);
+                return new OkObjectResult(energyData);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
 
-				return sb.ToString();
-			}
-		}
-	}
+        private async Task<string> ReadTextAsync(string filePath)
+        {
+            using (var sourceStream = this._fileProvider.GetFileInfo(filePath).CreateReadStream())
+            {
+                var sb = new StringBuilder();
+                var buffer = new byte[500];
+                int numRead;
+                while ((numRead = await sourceStream.ReadAsync(buffer, 0, buffer.Length)) != 0)
+                {
+                    var text = Encoding.ASCII.GetString(buffer, 0, numRead);
+                    sb.Append(text);
+                }
+
+                return sb.ToString();
+            }
+        }
+    }
 }
