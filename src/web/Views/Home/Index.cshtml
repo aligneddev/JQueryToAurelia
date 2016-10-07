@@ -10,6 +10,7 @@
   Units in <span id="unit"></span>
 </div>
 <div class="row">
+  <select id="yearSelect"></select>
   <!--<button id="filter">Filter</button>-->
 </div>
 
@@ -53,8 +54,16 @@
 @section scripts {
 <script>
   $(function(){
-    var rowSelector = '#dataTable tbody tr';
+    // fill the year select options
+    $.getJSON('api/energy/yearOptions').then(function(options){
+        var select = $("#yearSelect");
+        $.each(options, function(val, text) {
+          select.append(new Option(text, val));
+        });
+    });
+
     // get the data
+    var rowSelector = '#dataTable tbody tr';
     $.getJSON('api/energy/solar').then(function(data){
       $('#unit').text(data[0].unit);
        $(rowSelector).remove().end();
