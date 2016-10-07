@@ -62,8 +62,8 @@
         });
     });
 
-    // get the data
     var rowSelector = '#dataTable tbody tr';
+    // get the data
     $.getJSON('api/energy/solar').then(function(data){
       $('#unit').text(data[0].unit);
        $(rowSelector).remove().end();
