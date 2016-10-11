@@ -11,7 +11,6 @@
 </div>
 <div class="row">
   <select id="yearSelect"></select>
-  <!--<button id="filter">Filter</button>-->
 </div>
 
 <div class="row" style="margin-top: 20px;">
@@ -60,11 +59,24 @@
         $.each(options, function(val, text) {
           select.append(new Option(text, val));
         });
+        
+        select.on('change', function(e){
+            var optionSelected = $("option:selected", this);
+            var select = optionSelected.text();
+
+            // update based on the selection
+            getAndBuildTable(select);
+        });
     });
 
+    getAndBuildTable('all');
+  });
+
+  var getAndBuildTable = function(option){
+    
     var rowSelector = '#dataTable tbody tr';
     // get the data
-    $.getJSON('api/energy/solar').then(function(data){
+    $.getJSON('api/energy/solar?year=' + option).then(function(data){
       $('#unit').text(data[0].unit);
        $(rowSelector).remove().end();
        $.each(data, function(key, item){
@@ -93,7 +105,7 @@
         $('#detailsModal').modal('show');
       });
     });
-  });
+  }
 
   var findCountry = function(data, countryId){
       return data.filter((item) => {
