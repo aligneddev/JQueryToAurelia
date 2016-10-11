@@ -50,8 +50,11 @@
   </div>
 </div>
 
+
 @section scripts {
 <script>
+
+  // http://stackoverflow.com/questions/11961438/how-to-implement-a-loading-indicator-for-a-bootstrap-modal-waiting-for-ajax-to-f
   $(function(){
     // fill the year select options
     $.getJSON('api/energy/yearOptions').then(function(options){
@@ -76,6 +79,7 @@
     
     var rowSelector = '#dataTable tbody tr';
     // get the data
+      showLoading();
     $.getJSON('api/energy/solar?year=' + option).then(function(data){
       $('#unit').text(data[0].unit);
        $(rowSelector).remove().end();
@@ -104,6 +108,8 @@
         ul.append('<li>' + match.commodityTransactionName + '</li>');
         $('#detailsModal').modal('show');
       });
+
+      hideLoading();
     });
   }
 
@@ -111,6 +117,16 @@
       return data.filter((item) => {
           return item.countryId.toString() === countryId.toString();
       })[0];
+  };
+
+  var showLoading = function(){
+    $("#loadingIndicator").fadeIn();
+  };
+
+  var hideLoading = function() {
+    window.setTimeout(function() {
+    $("#loadingIndicator").fadeOut();
+    }, 500);
   };
   </script>
 }
