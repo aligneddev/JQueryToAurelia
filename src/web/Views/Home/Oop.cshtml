@@ -1,0 +1,59 @@
+@{
+    ViewData["Title"] = "Object Orientated Programming";
+}
+<div class="row">
+  <h1>Energy</h1>
+</div>
+<div class="row">
+  Energy information from: https://datamarket.azure.com/browse/data?price=free, https://api.datamarket.azure.com/UnitedNations/Energy/
+  <br />
+  Units in <span id="unit"></span>
+</div>
+<div class="row">
+  <select id="yearSelect"></select>
+</div>
+
+<div class="row" style="margin-top: 20px;">
+  <div class="container">
+    <div class="row">
+          <div class="table-responsive">
+          <table id="dataTable" class="table table-condensed table-hover">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Country</th>
+                <th>Quantity</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+          </div>
+    </div>
+  </div>
+</div>
+
+<div id="detailsModal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Details</h4>
+      </div>
+      <div class="modal-body">
+        <ul id="details"></ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+@section scripts {
+<script>
+  $(function(){
+    
+  });
+  </script>
+}
