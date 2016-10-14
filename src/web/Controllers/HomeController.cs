@@ -13,5 +13,9 @@ namespace jQueryToAurelia.Web.Controllers
         {
             return View();
         }
+
+        public IActionResult JQuery() {
+            return View();
+        }
     }
 }

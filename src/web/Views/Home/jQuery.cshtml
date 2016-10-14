@@ -1,0 +1,132 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="row">
+  <h1>Energy</h1>
+</div>
+<div class="row">
+  Energy information from: https://datamarket.azure.com/browse/data?price=free, https://api.datamarket.azure.com/UnitedNations/Energy/
+  <br />
+  Units in <span id="unit"></span>
+</div>
+<div class="row">
+  <select id="yearSelect"></select>
+</div>
+
+<div class="row" style="margin-top: 20px;">
+  <div class="container">
+    <div class="row">
+          <div class="table-responsive">
+          <table id="dataTable" class="table table-condensed table-hover">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Country</th>
+                <th>Quantity</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+          </div>
+    </div>
+  </div>
+</div>
+
+<div id="detailsModal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Details</h4>
+      </div>
+      <div class="modal-body">
+        <ul id="details"></ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+@section scripts {
+<script>
+
+  // http://stackoverflow.com/questions/11961438/how-to-implement-a-loading-indicator-for-a-bootstrap-modal-waiting-for-ajax-to-f
+  $(function(){
+    // fill the year select options
+    $.getJSON('api/energy/yearOptions').then(function(options){
+        var select = $("#yearSelect");
+        $.each(options, function(val, text) {
+          select.append(new Option(text, val));
+        });
+        
+        select.on('change', function(e){
+            var optionSelected = $("option:selected", this);
+            var select = optionSelected.text();
+
+            // update based on the selection
+            getAndBuildTable(select);
+        });
+    });
+
+    getAndBuildTable('all');
+  });
+
+  var getAndBuildTable = function(option){
+    
+    var rowSelector = '#dataTable tbody tr';
+    // get the data
+      showLoading();
+    $.getJSON('api/energy/solar?year=' + option).then(function(data){
+      $('#unit').text(data[0].unit);
+       $(rowSelector).remove().end();
+       $.each(data, function(key, item){
+         $('#dataTable > tbody:last-child').append('<tr>'
+                + '<td>' + item.countryId + '</td>'
+                + '<td>' + item.countryName + '</td>'
+                + '<td>' + item.quantity + '</td>');
+       });
+
+      // row details click event
+      $(rowSelector).on('click', function() {
+        var details = $(this);
+        var countryId = $(details[0].cells[0]).text();
+        
+        // find the country
+        var match = findCountry(data, countryId);
+        
+        // put the information into the Bootstrap modal
+        var ul = $('#detailsModal #details');
+        ul.empty();
+        ul.append('<li>' + match.countryId + '</li>');
+        ul.append('<li>' + match.countryName + '</li>');
+        ul.append('<li>' + match.quantity + '</li>');
+        ul.append('<li>' + match.year + '</li>');
+        ul.append('<li>' + match.commodityTransactionName + '</li>');
+        $('#detailsModal').modal('show');
+      });
+
+      hideLoading();
+    });
+  }
+
+  var findCountry = function(data, countryId){
+      return data.filter((item) => {
+          return item.countryId.toString() === countryId.toString();
+      })[0];
+  };
+
+  var showLoading = function(){
+    $("#loadingIndicator").fadeIn();
+  };
+
+  var hideLoading = function() {
+    window.setTimeout(function() {
+    $("#loadingIndicator").fadeOut();
+    }, 500);
+  };
+  </script>
+}
