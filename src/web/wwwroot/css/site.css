@@ -41,4 +41,21 @@ textarea {
 .table-hover>tbody>tr:hover>td, .table-hover>tbody>tr:hover>th {
   background-color: #550055;
   color:#eeeeee;
+  cursor: pointer;
+}
+
+.loadingIndicator {
+    z-index: 10000;
+    background-color: gray;
+    position: fixed; 
+    left: 0;
+    top: 0;
+    width:100%;
+    height:100%;
+}
+
+.loadingIndicator img {
+    position: fixed;
+    left: 50%;
+    top:50%;
 }
