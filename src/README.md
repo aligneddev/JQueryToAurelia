@@ -16,6 +16,8 @@ Using Data from https://api.datamarket.azure.com/UnitedNations/Energy/ with my f
 
 ## Key Points
  - Client side code doesn't have to be a mess
+ - Gain speed and reduce bandwidth with bundling and minification
+  - https://docs.asp.net/en/latest/client-side/bundling-and-minification.htm
  - Clean Code matters for productivity
  - Reducing Technical Debt
 
