@@ -57,7 +57,7 @@
   // http://stackoverflow.com/questions/11961438/how-to-implement-a-loading-indicator-for-a-bootstrap-modal-waiting-for-ajax-to-f
   $(function(){
     // fill the year select options
-    $.getJSON('api/energy/yearOptions').then(function(options){
+    $.getJSON('/api/energy/yearOptions').then(function(options){
         var select = $("#yearSelect");
         $.each(options, function(val, text) {
           select.append(new Option(text, val));
@@ -80,7 +80,7 @@
     var rowSelector = '#dataTable tbody tr';
     // get the data
       showLoading();
-    $.getJSON('api/energy/solar?year=' + option).then(function(data){
+    $.getJSON('/api/energy/solar?year=' + option).then(function(data){
       $('#unit').text(data[0].unit);
        $(rowSelector).remove().end();
        $.each(data, function(key, item){
