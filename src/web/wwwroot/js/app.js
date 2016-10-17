@@ -8,9 +8,13 @@ function app(dataApi) {
 
 app.prototype.initialize = function () {
     var _this = this;
-    return this.dataApi.getYearOptions().then(function (options) {
+    var yearOptionsPromise = this.dataApi.getYearOptions().then(function (options) {
         _this.fillYearOptions(options);
     });
+
+    var fillTablePromise = this.getAndBuildTable('all');
+
+    return $.when(yearOptionsPromise, fillTablePromise);
 };
 
 app.prototype.fillYearOptions = function (options) {
