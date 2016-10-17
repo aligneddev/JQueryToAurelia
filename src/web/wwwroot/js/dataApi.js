@@ -10,5 +10,12 @@ function dataApi() {
  */
 dataApi.prototype.getYearOptions = function () {
     // return the promise
-    return  $.getJSON('/api/energy/yearOptions');
+    return $.getJSON('/api/energy/yearOptions');
+}
+
+/**
+ * Get the energy data from the API.
+ */
+dataApi.prototype.getEnergyData = function (option) {
+    return $.getJSON('/api/energy/solar?year=' + option);
 }
