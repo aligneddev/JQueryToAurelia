@@ -27,7 +27,7 @@ app.prototype.fillYearOptions = function (options) {
     _this.setupYearOptionSelect(select);
 };
 
-app.prototype.setupYearOptionSelect = function(select) {
+app.prototype.setupYearOptionSelect = function (select) {
     var _this = this;
     select.on('change', function (e) {
         var optionSelected = $("option:selected", this);
@@ -55,27 +55,31 @@ app.prototype.getAndBuildTable = function (option) {
         });
 
         // row details click event
-        $(rowSelector).on('click', function () {
-            var details = $(this);
-            var countryId = $(details[0].cells[0]).text();
-
-            // find the country
-            var match = findCountry(data, countryId);
-
-            // put the information into the Bootstrap modal
-            var ul = $('#detailsModal #details');
-            ul.empty();
-            ul.append('<li>' + match.countryId + '</li>');
-            ul.append('<li>' + match.countryName + '</li>');
-            ul.append('<li>' + match.quantity + '</li>');
-            ul.append('<li>' + match.year + '</li>');
-            ul.append('<li>' + match.commodityTransactionName + '</li>');
-            $('#detailsModal').modal('show');
-        });
-
+        _this.setupRowDetails(rowSelector, data);
         _this.hideLoading();
     });
 };
+
+app.prototype.setupRowDetails = function (rowSelector, data) {
+    var _this = this;
+    $(rowSelector).on('click', function () {
+        var details = $(this);
+        var countryId = $(details[0].cells[0]).text();
+
+        // find the country
+        var match = _this.findCountry(data, countryId);
+
+        // put the information into the Bootstrap modal
+        var ul = $('#detailsModal #details');
+        ul.empty();
+        ul.append('<li>' + match.countryId + '</li>');
+        ul.append('<li>' + match.countryName + '</li>');
+        ul.append('<li>' + match.quantity + '</li>');
+        ul.append('<li>' + match.year + '</li>');
+        ul.append('<li>' + match.commodityTransactionName + '</li>');
+        $('#detailsModal').modal('show');
+    });
+}
 
 app.prototype.findCountry = function (data, countryId) {
     return data.filter((item) => {
