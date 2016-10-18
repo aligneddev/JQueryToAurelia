@@ -1,8 +1,9 @@
 /**
  * The main startup interface for the OOP page.
  */
-function app(energyDataApi) {
+function app(energyDataApi, loadingIndicator) {
     this.energyDataApi = energyDataApi;
+    this.loadingIndicator = loadingIndicator;
 }
 
 app.prototype.initialize = function () {
@@ -41,7 +42,7 @@ app.prototype.getAndBuildTable = function (option) {
     var rowSelector = '#dataTable tbody tr';
 
     // get the data
-    this.showLoading();
+    _this.loadingIndicator.showLoading();
     return this.energyDataApi.getEnergyData(option).then(function (data) {
         $('#unit').text(data[0].unit);
         $(rowSelector).remove().end();
@@ -49,7 +50,7 @@ app.prototype.getAndBuildTable = function (option) {
 
         // row details click event
         _this.setupRowDetails(rowSelector, data);
-        _this.hideLoading();
+        _this.loadingIndicator.hideLoading();
     });
 };
 
@@ -94,14 +95,4 @@ app.prototype.findCountry = function (data, countryId) {
     return data.filter((item) => {
         return item.countryId.toString() === countryId.toString();
     })[0];
-};
-
-app.prototype.showLoading = function () {
-    $("#loadingIndicator").show();
-};
-
-app.prototype.hideLoading = function () {
-    window.setTimeout(function () {
-        $("#loadingIndicator").fadeOut();
-    }, 500);
 };

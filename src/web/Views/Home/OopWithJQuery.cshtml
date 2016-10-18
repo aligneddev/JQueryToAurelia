@@ -51,14 +51,16 @@
 <environment names="Development">
 	<script src="~/js/OopWithJQuery/app.js"></script>
 	<script src="~/js/OopWithJQuery/energyDataApi.js"></script>
+	<script src="~/js/loadingIndicator.js"></script>
 </environment>
 <environment names="Staging,Production">
 	<script src="~/js/OopWithJQuery/app.js" asp-append-version="true"></script>
 	<script src="~/js/OopWithJQuery/energyDataApi.js" asp-append-version="true"></script>
+	<script src="~/js/loadingIndicator.js" asp-append-version="true"></script>
 </environment>
 <script>
   $(function(){
-    var appMain = new app(new energyDataApi());
+    var appMain = new app(new energyDataApi(), new loadingIndicator());
     appMain.initialize();
   });
   </script> }
