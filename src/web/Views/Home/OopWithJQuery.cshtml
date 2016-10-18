@@ -49,10 +49,12 @@
 
 @section scripts {
 <environment names="Development">
-	<script src="/js/energyDataApi.js"></script>
+	<script src="~/js/OopWithJQuery/app.js"></script>
+	<script src="~/js/OopWithJQuery/energyDataApi.js"></script>
 </environment>
 <environment names="Staging,Production">
-	<script src="/js/energyDataApi.js" asp-append-version="true"></script>
+	<script src="~/js/OopWithJQuery/app.js" asp-append-version="true"></script>
+	<script src="~/js/OopWithJQuery/energyDataApi.js" asp-append-version="true"></script>
 </environment>
 <script>
   $(function(){
