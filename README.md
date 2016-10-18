@@ -6,10 +6,24 @@ In this talk, I'll start from a jQuery driven UI (grid with filtering) and move 
 
 This is a tall order for an hour, so we'll have to move quickly through the code changes, but I think you'll see the benefits of treating JavaScript like a real language.
 
+## Get running
+ 1. Install .Net Core  (.Net Core SDK https://www.microsoft.com/net/core#windows)
+ 1. Install/update [NodeJs](http://www.nodejs.org)
+ 1. open up a command prompt, 
+    1. mkdir c:\git
+    1. cd git
+    1. git clone https://github.com/logankd/JQueryToAurelia
+ 1. cd src\Web
+ 1. dotnet restore (your IDE can do this too on build)
+ 1. npm install
+ 1. npm install bower -g
+    1. installs bower globally
+ 1. bower install (grab dependencies)
+ 1. dotnet build
 
 ## Server
- - ASP.Net MVC Core
- - xunit for tests: https://docs.microsoft.com/en-us/dotnet/articles/core/testing/unit-testing-with-dotnet-test
+ - ASP.Net MVC Core: http://www.dot.net (install .net core SDK https://www.microsoft.com/net/core#windows)
+   - works on Windows/Mac/Linux! with Visual Studio Code or Visual Studio.
 
 ## Data  
 Using Data from https://api.datamarket.azure.com/UnitedNations/Energy/ with my free subscription key. I'm storing some in JSON files and then serving them from MVC.

@@ -1,0 +1,14 @@
+@{ ViewData["Title"] = "TypeScript and KnockoutJs"; }
+<div class="row">
+	<h1>Energy with TypeScript and KnockoutJs</h1>
+</div>
+
+
+@section scripts {
+    <environment names="Development">
+        <script src="~/js/lib/knockoutjs/dist/knockout.debug.js"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="~/js/lib/knockoutjs/dist/knockout.js" asp-append-version="true"></script>
+    </environment>
+}

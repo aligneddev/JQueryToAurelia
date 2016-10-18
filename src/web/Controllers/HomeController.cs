@@ -27,5 +27,9 @@ namespace jQueryToAurelia.Web.Controllers
         public IActionResult OopWithJQuery(){
             return View();
         }
+
+        public IActionResult TypeScriptWithKnockout(){
+            return View();
+        }
     }
 }
