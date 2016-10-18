@@ -48,3 +48,11 @@ Then it should show the new data in the table
 Show a loading indicator for at least 500 ms while loading data
 
 
+## Step 1 - JQuery in the html
+ * jQuery branch
+
+## Step 2 - JQuery code moved into objects
+ * OOP branch
+
+## Step 3 - TypeScript with KnockoutJs
+ *  tsAndKo
