@@ -1,4 +1,3 @@
-
 /**
  * The main startup interface for the OOP page.
  */
@@ -47,17 +46,21 @@ app.prototype.getAndBuildTable = function (option) {
     return this.dataApi.getEnergyData(option).then(function (data) {
         $('#unit').text(data[0].unit);
         $(rowSelector).remove().end();
-        $.each(data, function (key, item) {
-            $('#dataTable > tbody:last-child').append('<tr>'
-                + '<td>' + item.countryId + '</td>'
-                + '<td>' + item.countryName + '</td>'
-                + '<td>' + item.quantity + '</td>');
-        });
+        _this.fillTableWithData(data);
 
         // row details click event
         _this.setupRowDetails(rowSelector, data);
         _this.hideLoading();
     });
+};
+
+app.prototype.fillTableWithData = function(data){
+    $.each(data, function (key, item) {
+            $('#dataTable > tbody:last-child').append('<tr>'
+                + '<td>' + item.countryId + '</td>'
+                + '<td>' + item.countryName + '</td>'
+                + '<td>' + item.quantity + '</td>');
+        });
 };
 
 app.prototype.setupRowDetails = function (rowSelector, data) {
