@@ -49,14 +49,14 @@
 
 @section scripts {
 <environment names="Development">
-	<script src="/js/dataApi.js"></script>
+	<script src="/js/energyDataApi.js"></script>
 </environment>
 <environment names="Staging,Production">
-	<script src="/js/dataApi.js" asp-append-version="true"></script>
+	<script src="/js/energyDataApi.js" asp-append-version="true"></script>
 </environment>
 <script>
   $(function(){
-    var appMain = new app(new dataApi());
+    var appMain = new app(new energyDataApi());
     appMain.initialize();
   });
   </script> }

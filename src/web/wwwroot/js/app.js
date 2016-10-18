@@ -1,13 +1,13 @@
 /**
  * The main startup interface for the OOP page.
  */
-function app(dataApi) {
-    this.dataApi = dataApi;
+function app(energyDataApi) {
+    this.energyDataApi = energyDataApi;
 }
 
 app.prototype.initialize = function () {
     var _this = this;
-    var yearOptionsPromise = this.dataApi.getYearOptions().then(function (options) {
+    var yearOptionsPromise = this.energyDataApi.getYearOptions().then(function (options) {
         _this.fillYearOptions(options);
     });
 
@@ -42,7 +42,7 @@ app.prototype.getAndBuildTable = function (option) {
 
     // get the data
     this.showLoading();
-    return this.dataApi.getEnergyData(option).then(function (data) {
+    return this.energyDataApi.getEnergyData(option).then(function (data) {
         $('#unit').text(data[0].unit);
         $(rowSelector).remove().end();
         _this.fillTableWithData(data);
