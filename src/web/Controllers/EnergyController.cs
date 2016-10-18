@@ -18,6 +18,7 @@ namespace jQueryToAurelia.Web.Controllers
         }
 
         [HttpGet]
+        [ResponseCache(Duration = 60)]
         public IActionResult YearOptions()
         {
             return new OkObjectResult(new List<string>{
