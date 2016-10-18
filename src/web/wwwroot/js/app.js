@@ -65,21 +65,24 @@ app.prototype.setupRowDetails = function (rowSelector, data) {
     $(rowSelector).on('click', function () {
         var details = $(this);
         var countryId = $(details[0].cells[0]).text();
-
-        // find the country
-        var match = _this.findCountry(data, countryId);
-
-        // put the information into the Bootstrap modal
-        var ul = $('#detailsModal #details');
-        ul.empty();
-        ul.append('<li>' + match.countryId + '</li>');
-        ul.append('<li>' + match.countryName + '</li>');
-        ul.append('<li>' + match.quantity + '</li>');
-        ul.append('<li>' + match.year + '</li>');
-        ul.append('<li>' + match.commodityTransactionName + '</li>');
-        $('#detailsModal').modal('show');
+        _this.showDetails(details, countryId);
     });
 }
+
+app.prototype.showDetails = function (details, countryId) {
+    // find the country
+    var match = _this.findCountry(data, countryId);
+
+    // put the information into the Bootstrap modal
+    var ul = $('#detailsModal #details');
+    ul.empty();
+    ul.append('<li>' + match.countryId + '</li>');
+    ul.append('<li>' + match.countryName + '</li>');
+    ul.append('<li>' + match.quantity + '</li>');
+    ul.append('<li>' + match.year + '</li>');
+    ul.append('<li>' + match.commodityTransactionName + '</li>');
+    $('#detailsModal').modal('show');
+};
 
 app.prototype.findCountry = function (data, countryId) {
     return data.filter((item) => {
