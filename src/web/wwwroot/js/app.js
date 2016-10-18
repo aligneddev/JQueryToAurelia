@@ -12,7 +12,6 @@ app.prototype.initialize = function () {
     });
 
     var fillTablePromise = this.getAndBuildTable('all');
-
     return $.when(yearOptionsPromise, fillTablePromise);
 };
 
