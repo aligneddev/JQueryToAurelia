@@ -5,10 +5,16 @@
 
 
 @section scripts {
-    <environment names="Development">
-        <script src="~/js/lib/knockoutjs/dist/knockout.debug.js"></script>
-    </environment>
-    <environment names="Staging,Production">
-        <script src="~/js/lib/knockoutjs/dist/knockout.js" asp-append-version="true"></script>
-    </environment>
+<environment names="Development">
+	<script src="~/js/lib/knockoutjs/dist/knockout.debug.js"></script>
+</environment>
+<environment names="Staging,Production">
+	<script src="~/js/lib/knockoutjs/dist/knockout.js" asp-append-version="true"></script>
+</environment>
+
+<script>
+    // https://www.sitepoint.com/jquery-document-ready-plain-javascript/
+    // "just move your JavaScript before the closing </body> tag and you can be sure that the DOM has finished loading!"
+</script> 
+
 }
