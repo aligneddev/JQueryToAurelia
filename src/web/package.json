@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@types/jquery": "^2.0.33",
+    "@types/knockout": "^3.4.36"
+  }
+}

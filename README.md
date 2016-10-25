@@ -20,6 +20,7 @@ This is a tall order for an hour, so we'll have to move quickly through the code
     1. installs bower globally
  1. bower install (grab dependencies)
  1. dotnet build
+ 1. get the TypeScript compiler installed if you don't have it: http://www.typescriptlang.org/
 
 ## Server
  - ASP.Net MVC Core: http://www.dot.net (install .net core SDK https://www.microsoft.com/net/core#windows)
@@ -70,3 +71,14 @@ Show a loading indicator for at least 500 ms while loading data
 
 ## Step 3 - TypeScript with KnockoutJs
  *  tsAndKo
+ https://code.visualstudio.com/Docs/languages/typescript
+
+Add in d.ts files from npm npm install --save @types/knockout
+ - see package.JSON
+ tsconfig.json file set to use es2015 modules for import
+ - in .gitignore add wwwroot/js/tsWithKo/*.js to not check in generated files
+
+ running tsc -w in the command line for this project will compile TypeScript whenever you save a .ts change.
+
+### Modules
+https://www.typescriptlang.org/docs/handbook/modules.html
