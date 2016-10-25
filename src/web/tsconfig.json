@@ -1,11 +1,15 @@
 {
     "compilerOptions": {
-        "target": "es5",
+        "target": "es6",
         "module": "es6",
         "sourceMap": true,
         "removeComments": true
     },
     "exclude": [
         "node_modules"
+    ],
+    "files":[
+        "node_modules/@types/whatwg-fetch/index.d.ts",
+        "node_modules/@types/whatwg-streams/index.d.ts"
     ]
 }

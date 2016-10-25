@@ -2,8 +2,33 @@
 <div class="row">
 	<h1>Energy with TypeScript and KnockoutJs</h1>
 </div>
+<div class="row">
+	Energy information from: https://datamarket.azure.com/browse/data?price=free, https://api.datamarket.azure.com/UnitedNations/Energy/
+	<br /> Units in <span id="unit"></span>
+</div>
+<div class="row">
+	<select id="yearSelect"></select>
+</div>
 
-
+<div class="row" style="margin-top: 20px;">
+	<div class="container">
+		<div class="row">
+			<div class="table-responsive">
+				<table id="dataTable" class="table table-condensed table-hover">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Country</th>
+							<th>Quantity</th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
 @section scripts {
 <environment names="Development">
 	<script src="~/js/lib/knockoutjs/dist/knockout.debug.js"></script>
@@ -15,6 +40,8 @@
 <script>
     // https://www.sitepoint.com/jquery-document-ready-plain-javascript/
     // "just move your JavaScript before the closing </body> tag and you can be sure that the DOM has finished loading!"
+	 var appMain = new app(new energyDataApi(), new loadingIndicator());
+    appMain.initialize();
 </script> 
 
 }

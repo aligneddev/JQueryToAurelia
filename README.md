@@ -76,9 +76,18 @@ Show a loading indicator for at least 500 ms while loading data
 Add in d.ts files from npm npm install --save @types/knockout
  - see package.JSON
  tsconfig.json file set to use es2015 modules for import
- - in .gitignore add wwwroot/js/tsWithKo/*.js to not check in generated files
+  - targeting es6, so it will only work with newer browsers
+  http://kangax.github.io/compat-table/es6/
+ - in .gitignore add wwwroot/js/tsWithKo/*.js and 
+wwwroot/js/tsWithKo/*.js.map to not check in generated files
 
  running tsc -w in the command line for this project will compile TypeScript whenever you save a .ts change.
 
 ### Modules
+I'm using es6 for my module (see the tsconfig.json)
 https://www.typescriptlang.org/docs/handbook/modules.html
+http://www.2ality.com/2014/09/es6-modules-final.html
+import * as $ from "jquery";
+
+### Promises without jQuery
+http://caniuse.com/#search=promise - all but IE and Opera mini (Edge works)
