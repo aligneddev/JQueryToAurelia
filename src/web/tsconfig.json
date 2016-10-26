@@ -1,15 +1,14 @@
 {
+    "compileOnSave": true,
     "compilerOptions": {
-        "target": "es6",
+        "target": "es5",
         "module": "es6",
         "sourceMap": true,
-        "removeComments": true
+        "removeComments": true,
+        "strictNullChecks": true
     },
-    "exclude": [
-        "node_modules"
-    ],
-    "files":[
-        "node_modules/@types/whatwg-fetch/index.d.ts",
-        "node_modules/@types/whatwg-streams/index.d.ts"
+    "exclude": [],
+    "include": [
+        "wwwroot/js/tsWithKo/**/*"
     ]
 }
