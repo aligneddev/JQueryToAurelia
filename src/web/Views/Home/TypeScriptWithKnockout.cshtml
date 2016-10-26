@@ -33,20 +33,19 @@
 <environment names="Development">
 	<script src="~/lib/knockoutjs/dist/knockout.debug.js"></script>
 	<script src="~/lib/requirejs/require.js"></script>
-
-	<script src="~/js/tsWithKo/app.js"></script>
 </environment>
 <environment names="Staging,Production">
 	<script src="~/lib/knockoutjs/dist/knockout.js" asp-append-version="true"></script>
 	<script src="~/lib/requirejs/require.js"></script>
-	<script src="~/js/tsWithKo/app.js"></script>
 </environment>
 
 <script>
     // https://www.sitepoint.com/jquery-document-ready-plain-javascript/
     // "just move your JavaScript before the closing </body> tag and you can be sure that the DOM has finished loading!"
-	 var appMain = new App(new energyDataApi(), new loadingIndicator());
-    appMain.initialize();
-</script> 
-
-}
+	require(['/js/tsWithKo/app.js', '/js/tsWithKo/energyDataApi.js', '/js/tsWithKo/loadingIndicator.js'],
+		function(App, EnergyDataApi, LoadingIndicator){
+			debugger;
+			var appMain = new App.default(new EnergyDataApi.default(), new LoadingIndicator.default());
+			appMain.initialize();
+		});
+</script> }

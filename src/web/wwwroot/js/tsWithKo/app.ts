@@ -1,7 +1,7 @@
-import * as knockout from 'knockout';
+import * as knockout from '/lib/knockoutjs/dist/knockout.js';
 import LoadingIndicator from './loadingIndicator';
 import EnergyDataApi from './energyDataApi';
-import 'jQuery';
+import '/lib/jQuery/dist/jquery.js';
 export default class App {
     public yearOptions: KnockoutObservableArray<string> = knockout.observableArray([]);
 

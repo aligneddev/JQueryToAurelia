@@ -1,5 +1,4 @@
-import 'whatwg-fetch';
-import 'jQuery';
+import '/lib/jQuery/dist/jquery.js';
 export default class EnergyDataApi {
     private yearOptions: string[] = [];
 

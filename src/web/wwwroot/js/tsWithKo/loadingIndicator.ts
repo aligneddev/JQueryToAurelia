@@ -1,4 +1,4 @@
-import * as $ from "jquery";
+import '/lib/jQuery/dist/jquery.js';
 
 export default class LoadingIndicator {
     public showLoading() {
