@@ -85,7 +85,7 @@ wwwroot/js/tsWithKo/*.js.map to not check in generated files
 
 if targeting es6 it will only work with newer browsers
   http://kangax.github.io/compat-table/es6/
-  
+
 ### Modules
 I'm using es6 for my module (see the tsconfig.json)
 https://www.typescriptlang.org/docs/handbook/modules.html
@@ -100,4 +100,11 @@ https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
 
 ES6 struggles:
  1. tsconfig.json target to es6 to get the whatwg-fetch d.ts to compile, but then "Uncaught SyntaxError: Unexpected token export" from export default App;
- 2. I walked away from fetch
+ 1. I walked away from fetch
+ 1. ended up using requirejs instead of es6 modules.
+
+
+Wanted to use:
+use fetch, es6 module, and es6 promises.
+
+I don't recommend the tsWithKo module requireJs approach. Unless I changed it from require and didn't update this README.md
