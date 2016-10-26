@@ -1,27 +1,30 @@
-import LoadingIndicator from 'js/tsWithKo/loadingIndicator';
-import EnergyDataApi from 'js/tsWithKo/energyDataApi';
+import * as knockout from 'knockout';
+import LoadingIndicator from './loadingIndicator';
+import EnergyDataApi from './energyDataApi';
+import 'jQuery';
 export default class App {
-    constructor(energyDataApi: EnergyDataApi, loadingIndicator: LoadingIndicator) {
-        
+    public yearOptions: KnockoutObservableArray<string> = knockout.observableArray([]);
+
+    constructor(private energyDataApi: EnergyDataApi, private loadingIndicator: LoadingIndicator) {
     }
 
-    public initialize(){
+    public initialize() {
+        var yearOptionsPromise = this.energyDataApi.getYearOptions().then((options) => {
+            this.yearOptions(options);
+        })
+
+        return $.when(yearOptionsPromise, this.energyDataApi.getEnergyData('all'));
+    }
+
+    public yearOptionSelected() {
 
     }
 
-    public fillYearOptions(options){
-
-    }
-
-    public setupYearOptionSelect(){
-
-    }
-
-    public getEnergyData(option) {
-
+    public getEnergyData(option: string) {
+        return this.energyDataApi.getEnergyData(option);
     }
 
     public showDetails() {
-
+        
     }
 }

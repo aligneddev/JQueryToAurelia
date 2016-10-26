@@ -1,7 +1,6 @@
 {
   "dependencies": {
     "@types/jquery": "^2.0.33",
-    "@types/knockout": "^3.4.36",
-    "@types/whatwg-fetch": "0.0.32"
+    "@types/knockout": "^3.4.36"
   }
 }

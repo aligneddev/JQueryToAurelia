@@ -76,13 +76,16 @@ Show a loading indicator for at least 500 ms while loading data
 Add in d.ts files from npm npm install --save @types/knockout
  - see package.JSON
  tsconfig.json file set to use es2015 modules for import
-  - targeting es6, so it will only work with newer browsers
-  http://kangax.github.io/compat-table/es6/
+  -http://www.typescriptlang.org/docs/handbook/tsconfig-json.html
+  
  - in .gitignore add wwwroot/js/tsWithKo/*.js and 
 wwwroot/js/tsWithKo/*.js.map to not check in generated files
 
  running tsc -w in the command line for this project will compile TypeScript whenever you save a .ts change.
 
+if targeting es6 it will only work with newer browsers
+  http://kangax.github.io/compat-table/es6/
+  
 ### Modules
 I'm using es6 for my module (see the tsconfig.json)
 https://www.typescriptlang.org/docs/handbook/modules.html
@@ -91,3 +94,10 @@ import * as $ from "jquery";
 
 ### Promises without jQuery
 http://caniuse.com/#search=promise - all but IE and Opera mini (Edge works)
+
+### Fetch (AJax without jQuery)
+https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+
+ES6 struggles:
+ 1. tsconfig.json target to es6 to get the whatwg-fetch d.ts to compile, but then "Uncaught SyntaxError: Unexpected token export" from export default App;
+ 2. I walked away from fetch
