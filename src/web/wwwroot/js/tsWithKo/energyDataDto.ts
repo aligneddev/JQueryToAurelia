@@ -1,8 +1,8 @@
 /***
- * Data transfer object from the energy data api.
+ * Data transfer object (DTO) from the energy data api.
  * Copy of the C# class.
  */
-export default class EnergyData {
+export default class EnergyDataDto {
     public DataSeriesId: string;
     public CountryId: string;
     public CountryName: string;

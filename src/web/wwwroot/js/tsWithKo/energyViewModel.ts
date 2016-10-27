@@ -2,11 +2,11 @@ import * as knockout from 'knockout';
 import * as $ from 'jquery';
 import LoadingIndicator from './loadingIndicator';
 import EnergyDataApi from './energyDataApi';
-import EnergyData from './energyData';
+import EnergyDataDto from './energyDataDto';
 export default class EnergyViewModel {
     public yearOptions: KnockoutObservableArray<string> = knockout.observableArray([]);
     public selectedOption = knockout.observable('all');
-    public energyData:KnockoutObservableArray<EnergyData> = knockout.observableArray([]);
+    public energyData:KnockoutObservableArray<EnergyDataDto> = knockout.observableArray([]);
     
     /**
      * The View Model (for data binding to the View) for the main energy view.
@@ -25,7 +25,7 @@ export default class EnergyViewModel {
             this.yearOptions(options);
         })
 
-        return $.when<void | EnergyData[]>(yearOptionsPromise, this.getEnergyData(this.selectedOption())).then(() =>{
+        return $.when<void | EnergyDataDto[]>(yearOptionsPromise, this.getEnergyData(this.selectedOption())).then(() =>{
             this.loadingIndicator.hideLoading();
         });
     }

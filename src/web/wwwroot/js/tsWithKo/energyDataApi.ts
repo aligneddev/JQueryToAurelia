@@ -1,5 +1,5 @@
 import * as $ from 'jquery';
-import EnergyData from './energyData';
+import EnergyDataDto from './energyDataDto';
 export default class EnergyDataApi {
     private yearOptions: string[] = [];
 
@@ -21,7 +21,7 @@ export default class EnergyDataApi {
         });
     }
 
-    public getEnergyData(option: string): JQueryPromise<EnergyData[]>{        
+    public getEnergyData(option: string): JQueryPromise<EnergyDataDto[]>{        
         return $.getJSON(`/api/energy/solar?year=${option}`);
     }
 }
