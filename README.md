@@ -72,6 +72,7 @@ Show a loading indicator for at least 500 ms while loading data
 ## Step 3 - TypeScript with KnockoutJs
  *  tsAndKo
  https://code.visualstudio.com/Docs/languages/typescript
+ http://knockoutjs.com/documentation/introduction.html
 
 Add in d.ts files from npm npm install --save @types/knockout
  - see package.JSON

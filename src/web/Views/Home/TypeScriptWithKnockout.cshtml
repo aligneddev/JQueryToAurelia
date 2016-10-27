@@ -7,7 +7,7 @@
 	<br /> Units in <span id="unit"></span>
 </div>
 <div class="row">
-	<select></select>
+	<select data-bind="options: yearOptions, value: selectedOption"></select>
 </div>
 
 <div class="row" style="margin-top: 20px;">
@@ -53,7 +53,7 @@
 			var appMain = new App.default(energyViewModel);
 			appMain.initialize().then(function() {
 				// setup the binding
-				ko.applyBindings(appMain);
+				ko.applyBindings(energyViewModel);
 			});
 		});
 </script> 
