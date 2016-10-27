@@ -39,21 +39,22 @@
 
 <script>
 	require.config({
-baseUrl: '/js',
-paths:{
-	jquery: '/lib/jquery/dist/jquery',
-	knockout: '/lib/knockoutjs/dist/knockout'
-}
+		baseUrl: '/js/tsWithKo',
+		paths:{
+			jquery: '/lib/jquery/dist/jquery',
+			knockout: '/lib/knockoutjs/dist/knockout'
+		}
 	});
     // https://www.sitepoint.com/jquery-document-ready-plain-javascript/
     // "just move your JavaScript before the closing </body> tag and you can be sure that the DOM has finished loading!"
-	require(['/js/tsWithKo/app.js', '/js/tsWithKo/energyDataApi.js', '/js/tsWithKo/loadingIndicator.js', 'knockout'],
-		function(App, EnergyDataApi, LoadingIndicator, ko){
-			debugger;
-			var appMain = new App.default(new EnergyDataApi.default(), new LoadingIndicator.default());
+	require(['/js/tsWithKo/app.js', '/js/tsWithKo/energyDataApi.js', '/js/tsWithKo/loadingIndicator.js', 'energyViewModel', 'knockout'],
+		function(App, EnergyDataApi, LoadingIndicator, EnergyViewModel, ko){
+			var energyViewModel = new EnergyViewModel.default(new EnergyDataApi.default(), new LoadingIndicator.default());
+			var appMain = new App.default(energyViewModel);
 			appMain.initialize().then(function() {
 				// setup the binding
 				ko.applyBindings(appMain);
 			});
 		});
-</script> }
+</script> 
+}
