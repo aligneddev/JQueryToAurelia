@@ -20,15 +20,21 @@ export default class EnergyViewModel {
     }
 
     public initialize() {
+        this.loadingIndicator.showLoading();
         var yearOptionsPromise = this.energyDataApi.getYearOptions().then((options: string[]) => {
             this.yearOptions(options);
         })
 
-        return $.when<void | EnergyData[]>(yearOptionsPromise, this.getEnergyData(this.selectedOption()));
+        return $.when<void | EnergyData[]>(yearOptionsPromise, this.getEnergyData(this.selectedOption())).then(() =>{
+            this.loadingIndicator.hideLoading();
+        });
     }
 
     public yearOptionSelected(selectedOption: string) {
-        return this.getEnergyData(selectedOption);
+        this.loadingIndicator.showLoading();
+        return this.getEnergyData(selectedOption).then(() =>{
+            this.loadingIndicator.hideLoading();
+        });
     }
 
     public getEnergyData(option: string) {
