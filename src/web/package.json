@@ -1,6 +1,11 @@
 {
   "dependencies": {
     "@types/jquery": "^2.0.33",
-    "@types/knockout": "^3.4.36"
+    "@types/knockout": "^3.4.36",
+    "typescript": "^2.0.6"
+  },
+  "devDependencies": {
+    "bower": "^1.7.9",
+    "eslint": "^3.8.1"
   }
 }

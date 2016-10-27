@@ -108,3 +108,7 @@ Wanted to use:
 use fetch, es6 module, and es6 promises.
 
 I don't recommend the tsWithKo module requireJs approach. Unless I changed it from require and didn't update this README.md
+
+
+### Bundling, Webpack options
+http://www.jbrantly.com/es6-modules-with-typescript-and-webpack/

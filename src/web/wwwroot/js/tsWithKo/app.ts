@@ -1,4 +1,5 @@
-import * as knockout from '/lib/knockoutjs/dist/knockout.js';
+
+import * as knockout from 'knockout';
 import LoadingIndicator from './loadingIndicator';
 import EnergyDataApi from './energyDataApi';
 import '/lib/jQuery/dist/jquery.js';
