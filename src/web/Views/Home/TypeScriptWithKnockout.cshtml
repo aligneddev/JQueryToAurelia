@@ -10,7 +10,7 @@
 	<select data-bind="options: yearOptions, value: selectedOption"></select>
 </div>
 
-<div class="row" style="margin-top: 20px;">
+<div class="row" style="margin-top: 20px; display:none;" data-bind="visible: energyData().length > 0">
 	<div class="container">
 		<div class="row">
 			<div class="table-responsive">
@@ -22,7 +22,12 @@
 							<th>Quantity</th>
 						</tr>
 					</thead>
-					<tbody>
+					<tbody data-bind="foreach: energyData">
+						<tr>
+							<td data-bind="text: countryId"></td>
+							<td data-bind="text: countryName"></td>
+							<td data-bind="text: quantity"></td>
+						</tr>
 					</tbody>
 				</table>
 			</div>
@@ -56,5 +61,4 @@
 				ko.applyBindings(energyViewModel);
 			});
 		});
-</script> 
-}
+</script> }

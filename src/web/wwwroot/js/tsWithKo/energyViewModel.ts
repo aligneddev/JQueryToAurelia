@@ -33,7 +33,6 @@ export default class EnergyViewModel {
 
     public getEnergyData(option: string) {
         return this.energyDataApi.getEnergyData(option).then((energyData) => {
-            debugger;
             this.energyData(energyData);
         });
     }

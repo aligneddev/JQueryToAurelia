@@ -22,6 +22,6 @@ export default class EnergyDataApi {
     }
 
     public getEnergyData(option: string): JQueryPromise<EnergyData[]>{        
-        return $.getJSON('/api/energy/solar?year=${option}');
+        return $.getJSON(`/api/energy/solar?year=${option}`);
     }
 }
