@@ -1,0 +1,14 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+        "target": "es5",
+        "module": "amd", // use requireJs to get this working
+        "sourceMap": true,
+        "removeComments": true
+        //"strictNullChecks": true
+    },
+    "exclude": [],
+    "include": [
+        "wwwroot/js/tsWithKo/**/*"
+    ]
+}

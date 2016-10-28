@@ -6,10 +6,25 @@ In this talk, I'll start from a jQuery driven UI (grid with filtering) and move 
 
 This is a tall order for an hour, so we'll have to move quickly through the code changes, but I think you'll see the benefits of treating JavaScript like a real language.
 
+## Get running
+ 1. Install .Net Core  (.Net Core SDK https://www.microsoft.com/net/core#windows)
+ 1. Install/update [NodeJs](http://www.nodejs.org)
+ 1. open up a command prompt, 
+    1. mkdir c:\git
+    1. cd git
+    1. git clone https://github.com/logankd/JQueryToAurelia
+ 1. cd src\Web
+ 1. dotnet restore (your IDE can do this too on build)
+ 1. npm install
+ 1. npm install bower -g
+    1. installs bower globally
+ 1. bower install (grab dependencies)
+ 1. dotnet build
+ 1. get the TypeScript compiler installed if you don't have it: http://www.typescriptlang.org/
 
 ## Server
- - ASP.Net MVC Core
- - xunit for tests: https://docs.microsoft.com/en-us/dotnet/articles/core/testing/unit-testing-with-dotnet-test
+ - ASP.Net MVC Core: http://www.dot.net (install .net core SDK https://www.microsoft.com/net/core#windows)
+   - works on Windows/Mac/Linux! with Visual Studio Code or Visual Studio.
 
 ## Data  
 Using Data from https://api.datamarket.azure.com/UnitedNations/Energy/ with my free subscription key. I'm storing some in JSON files and then serving them from MVC.
@@ -56,3 +71,53 @@ Show a loading indicator for at least 500 ms while loading data
 
 ## Step 3 - TypeScript with KnockoutJs
  *  tsAndKo
+ https://code.visualstudio.com/Docs/languages/typescript
+ http://knockoutjs.com/documentation/introduction.html
+
+Add in d.ts files from npm npm install --save @types/knockout
+ - see package.JSON
+ tsconfig.json file set to use es2015 modules for import
+  -http://www.typescriptlang.org/docs/handbook/tsconfig-json.html
+  
+ - in .gitignore add wwwroot/js/tsWithKo/*.js and 
+wwwroot/js/tsWithKo/*.js.map to not check in generated files
+
+ running tsc -w in the command line for this project will compile TypeScript whenever you save a .ts change.
+
+if targeting es6 it will only work with newer browsers
+  http://kangax.github.io/compat-table/es6/
+
+### Modules
+I'm using es6 for my module (see the tsconfig.json)
+https://www.typescriptlang.org/docs/handbook/modules.html
+http://www.2ality.com/2014/09/es6-modules-final.html
+import * as $ from "jquery";
+
+### Promises without jQuery
+http://caniuse.com/#search=promise - all but IE and Opera mini (Edge works)
+
+### Fetch (AJax without jQuery)
+https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+
+ES6 struggles:
+ 1. tsconfig.json target to es6 to get the whatwg-fetch d.ts to compile, but then "Uncaught SyntaxError: Unexpected token export" from export default App;
+ 1. I walked away from fetch
+ 1. ended up using requirejs instead of es6 modules.
+
+
+Wanted to use:
+use fetch, es6 module, and es6 promises.
+
+I don't recommend the tsWithKo module requireJs approach. Unless I changed it from require and didn't update this README.md
+
+
+### Bundling, Webpack options
+http://www.jbrantly.com/es6-modules-with-typescript-and-webpack/
+
+### templates with KO
+could be external, I'm just using the <script type="text/template">
+https://github.com/rniemeyer/knockout-amd-helpers
+get the html file and place it in the DOm
+
+computed : rowVmToShowDetailsFor
+with console.log to see when it computes

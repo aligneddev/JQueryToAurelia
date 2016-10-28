@@ -36,6 +36,7 @@
 				<ul class="nav navbar-nav">
 					<li><a asp-area="" asp-controller="Home" asp-action="jQuery">jQuery</a></li>
 					<li><a asp-area="" asp-controller="Home" asp-action="OOPWithJQuery">OOP with JQuery</a></li>
+					<li><a asp-area="" asp-controller="Home" asp-action="TypeScriptWithKnockout">TypeScript With KnockoutJs</a></li>
 				</ul>
 			</div>
 		</div>
@@ -44,16 +45,18 @@
 		@RenderBody()
 		<hr />
 		<footer>
-
+		</footer>
+	</div>
     <environment names="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
     </environment>
     <environment names="Staging,Production">
+        <script src="~/lib/jquery/dist/jquery.min.js" asp-append-version="true"></script>
 		<script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js" asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
 			asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
         </script>
     </environment>
 	@RenderSection("scripts", required: false)
 </body>
-
 </html>

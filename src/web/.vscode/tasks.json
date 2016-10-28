@@ -11,6 +11,12 @@
             ],
             "isBuildCommand": true,
             "problemMatcher": "$msCompile"
+        },
+        {
+            "taskName": "typescript compile",
+            "args": ["-p", "."],
+            "showOutput": "silent",
+            "problemMatcher": "$tsc"
         }
     ]
 }

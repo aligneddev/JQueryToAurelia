@@ -1,0 +1,90 @@
+@{ ViewData["Title"] = "TypeScript and KnockoutJs"; }
+<div class="row">
+	<h1>Energy with TypeScript and KnockoutJs</h1>
+</div>
+<div class="row">
+	Energy information from: https://datamarket.azure.com/browse/data?price=free, https://api.datamarket.azure.com/UnitedNations/Energy/
+	<br /> Units in <span id="unit"></span>
+</div>
+<div class="row">
+	<select data-bind="options: yearOptions, value: selectedOption"></select>
+</div>
+
+<div class="row" style="margin-top: 20px; display:none;" data-bind="visible: energyData().length > 0">
+	<div class="container">
+		<div class="row">
+			<div class="table-responsive">
+				<table id="dataTable" class="table table-condensed table-hover">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Country</th>
+							<th>Quantity</th>
+						</tr>
+					</thead>
+					<tbody data-bind="foreach: energyData">
+						<tr data-bind="click: showDetails, template: { name: 'dataRow-template' }">
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="detailsModal" class="modal fade" tabindex="-1" role="dialog" data-bind="with: rowVmToShowDetailsFor">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Details</h4>
+			</div>
+			<div class="modal-body">
+				<li data-bind="text: model.countryName"></li>
+				<li data-bind="text: model.countryId"></li>
+				<li data-bind="text: model.quantity"></li>
+				<li data-bind="text: model.year"></li>
+				<li data-bind="text: model.commodityTransactionName"></li>
+				<li data-bind="text: model.unit"></li>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal" data-bind="click: closeDetails">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- we could also have bigger templates in an html file and pulled it in through HTTP -->
+<script type="text/html" id="dataRow-template">
+	<td data-bind="text: model.countryId"></td>
+	<td data-bind="text: model.countryName"></td>
+	<td data-bind="text: model.quantity"></td>
+</script> @section scripts {
+<environment names="Development">
+	<script src="~/lib/requirejs/require.js"></script>
+</environment>
+<environment names="Staging,Production">
+	<script src="~/lib/requirejs/require.js"></script>
+</environment>
+
+<script>
+	require.config({
+		baseUrl: '/js/tsWithKo',
+		paths:{
+			jquery: '/lib/jquery/dist/jquery',
+			knockout: '/lib/knockoutjs/dist/knockout',
+			bootstrap: '/lib/bootstrap/dist/js/bootstrap'
+		}
+	});
+    // https://www.sitepoint.com/jquery-document-ready-plain-javascript/
+    // "just move your JavaScript before the closing </body> tag and you can be sure that the DOM has finished loading!"
+	require(['/js/tsWithKo/app.js', '/js/tsWithKo/energyDataApi.js', '/js/tsWithKo/loadingIndicator.js', 'energyViewModel', 'knockout'],
+		function(App, EnergyDataApi, LoadingIndicator, EnergyViewModel, ko){
+			var energyViewModel = new EnergyViewModel.default(new EnergyDataApi.default(), new LoadingIndicator.default());
+			var appMain = new App.default(energyViewModel);
+			appMain.initialize().then(function() {
+				// setup the binding
+				ko.applyBindings(energyViewModel);
+			});
+		});
+</script> }
