@@ -3,14 +3,14 @@
  * Copy of the C# class.
  */
 export default class EnergyDataDto {
-    public DataSeriesId: string;
-    public CountryId: string;
-    public CountryName: string;
-    public TransactionCode: string;
-    public CommodityTransactionId: string;
-    public CommodityTransactionName: string;
-    public Year: number;
-    public Unit : string;
-    public Quantity: string;
-    public FootnoteSequenceId: string;
+    public dataSeriesId: string;
+    public countryId: string;
+    public countryName: string;
+    public transactionCode: string;
+    public commodityTransactionId: string;
+    public commodityTransactionName: string;
+    public year: number;
+    public unit : string;
+    public quantity: string;
+    public footnoteSequenceId: string;
 }

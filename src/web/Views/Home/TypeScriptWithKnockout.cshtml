@@ -23,10 +23,7 @@
 						</tr>
 					</thead>
 					<tbody data-bind="foreach: energyData">
-						<tr>
-							<td data-bind="text: countryId"></td>
-							<td data-bind="text: countryName"></td>
-							<td data-bind="text: quantity"></td>
+						<tr data-bind="click: showDetails, template: { name: 'dataRow-template' }">
 						</tr>
 					</tbody>
 				</table>
@@ -34,7 +31,35 @@
 		</div>
 	</div>
 </div>
-@section scripts {
+
+<div id="detailsModal" class="modal fade" tabindex="-1" role="dialog" data-bind="with: rowVmToShowDetailsFor">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Details</h4>
+			</div>
+			<div class="modal-body">
+				<li data-bind="text: model.countryName"></li>
+				<li data-bind="text: model.countryId"></li>
+				<li data-bind="text: model.quantity"></li>
+				<li data-bind="text: model.year"></li>
+				<li data-bind="text: model.commodityTransactionName"></li>
+				<li data-bind="text: model.unit"></li>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal" data-bind="click: closeDetails">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- we could also have bigger templates in an html file and pulled it in through HTTP -->
+<script type="text/html" id="dataRow-template">
+	<td data-bind="text: model.countryId"></td>
+	<td data-bind="text: model.countryName"></td>
+	<td data-bind="text: model.quantity"></td>
+</script> @section scripts {
 <environment names="Development">
 	<script src="~/lib/requirejs/require.js"></script>
 </environment>
@@ -47,7 +72,8 @@
 		baseUrl: '/js/tsWithKo',
 		paths:{
 			jquery: '/lib/jquery/dist/jquery',
-			knockout: '/lib/knockoutjs/dist/knockout'
+			knockout: '/lib/knockoutjs/dist/knockout',
+			bootstrap: '/lib/bootstrap/dist/js/bootstrap'
 		}
 	});
     // https://www.sitepoint.com/jquery-document-ready-plain-javascript/

@@ -2,10 +2,11 @@
   "dependencies": {
     "@types/jquery": "^2.0.33",
     "@types/knockout": "^3.4.36",
-    "typescript": "^2.0.6"
+    "@types/bootstrap": "^3.3.32"
   },
   "devDependencies": {
     "bower": "^1.7.9",
-    "eslint": "^3.8.1"
+    "eslint": "^3.8.1",
+    "typescript": "^2.0.6"
   }
 }

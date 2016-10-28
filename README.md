@@ -113,3 +113,11 @@ I don't recommend the tsWithKo module requireJs approach. Unless I changed it fr
 
 ### Bundling, Webpack options
 http://www.jbrantly.com/es6-modules-with-typescript-and-webpack/
+
+### templates with KO
+could be external, I'm just using the <script type="text/template">
+https://github.com/rniemeyer/knockout-amd-helpers
+get the html file and place it in the DOm
+
+computed : rowVmToShowDetailsFor
+with console.log to see when it computes
