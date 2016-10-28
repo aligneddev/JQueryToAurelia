@@ -24,5 +24,6 @@ export default class EnergyRowViewModel {
 
     public closeDetails() {
         this.isDetailsActive(false);
+        ($('#detailsModal') as any).modal('hide');
     }
 }
