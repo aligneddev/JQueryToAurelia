@@ -1,4 +1,6 @@
-# Aurelia with ASP.NET Core using TypeScript
+# Aurelia Energy Demo
+
+## Started from: Aurelia with ASP.NET Core using TypeScript
 
 This skeleton works both with and without Visual Studio; however, the steps for getting up and running are different for these two scenarios. Please follow the correct set of instructions based on whether or not you are using Visual Studio.
 
@@ -12,18 +14,20 @@ First, there are a set of prerequisites you will need whether or not you are usi
 ## Running the App in Visual Studio 2015
 
 Additional Prerequisites:
+
 - Visual Studio 2015 with Update 3
 - [ASP.NET Core](https://www.microsoft.com/net/core#windows) must be downloaded and installed. The directions for doing this are [here](https://www.microsoft.com/net/core#windows).
 
 1. Open the solution file `skeleton-typescript-aspnetcore.sln`. This file is located up two directories from the file. Visual Studio will automatically run `npm install`, `jspm install`, and `typings install` when you first open the solution. You may rerun these commands at any time by running `npm install` from the same directory this readme file is in.
-2. Open `Task Runner Explorer`. 
-3. The project is ready to be run when `Task Runner Explorer` shows that it is running the `gulp watch` command. 
-4. Press `F5` or click the `Run` button in Visual Studio. Visual Studio will launch your browser for you and navigate to the correct URL.
+1. Open `Task Runner Explorer`. 
+1. The project is ready to be run when `Task Runner Explorer` shows that it is running the `gulp watch` command. 
+1. Press `F5` or click the `Run` button in Visual Studio. Visual Studio will launch your browser for you and navigate to the correct URL.
 
 
 ## Running The App without Visual Studio
 
 Additional Prerequisites:
+
 - [ASP.NET Core](https://www.microsoft.com/net/core#windows) must be downloaded and installed. The directions for doing this are [here](https://www.microsoft.com/net/core#windows). You only need to download and install the `.NET Core SDK for Windows`.
 
 To run the app, follow these steps.
@@ -36,28 +40,28 @@ To run the app, follow these steps.
   This command will install the npm dependencies, and then run `jspm install -y` and `typings install` for you. If you do not desire for this behavior, you may edit or remove the `postinstall` script in the `package.json` file. 
   >**Note:** Windows users, if you experience an error of "unknown command unzip" you can solve this problem by doing `npm install -g unzip` and then re-running `jspm install`.
 
-6. Execute the following command:
+1. Execute the following command:
 
   ```shell
   dotnet restore
   ```
 
-7.  Build the project:
+1. Build the project:
 
   ```shell
   gulp build
   dotnet build
   ```
 
-8. To run the app, execute the following command:
+1. To run the app, execute the following command:
 
   ```shell
   dotnet run
   ```
 
-9. If you want the changes you are making to be reflected in the browser you can run `gulp watch` in a second terminal window and refresh the page in your browser.
+1. If you want the changes you are making to be reflected in the browser you can run `gulp watch` in a second terminal window and refresh the page in your browser.
 
-10. Browse to [http://localhost:5000](http://localhost:5000) to see the app. You can make changes in the code found under `src` and the browser should auto-refresh itself as you save files. (Note: It's possible that a port other than 5000 will be used if there's already something running there. Double check the port number shown on the console after the "dotnet run" to be sure.)
+1. Browse to [http://localhost:5000](http://localhost:5000) to see the app. You can make changes in the code found under `src` and the browser should auto-refresh itself as you save files. (Note: It's possible that a port other than 5000 will be used if there's already something running there. Double check the port number shown on the console after the "dotnet run" to be sure.)
 
 ## Bundling
 
@@ -78,11 +82,13 @@ To start the bundled app, execute the following command:
   ```shell
     gulp serve-bundle
   ```
-#### Configuration
+
+### Configuration
 
 The configuration is done by ```bundles.js``` file.
 
-##### Optional
+#### Optional
+
 Under ```options``` of ```dist/aurelia``` add ```rev: true``` to add bundle file revision/version.
 
 ## Running The Unit Tests
@@ -94,20 +100,22 @@ To run the unit tests, first ensure that you have followed the steps above in or
   ```shell
   npm install -g karma-cli
   ```
-2. Install Aurelia libs for test visibility:
+1. Install Aurelia libs for test visibility:
 
 ```shell
 jspm install aurelia-framework
 jspm install aurelia-http-client
 jspm install aurelia-router
 ```
-3. You can now run the tests with this command:
+
+1. You can now run the tests with this command:
 
   ```shell
   karma start
   ```
 
 ## Running The E2E Tests
+
 Integration tests are performed with [Protractor](http://angular.github.io/protractor/#/).
 
 1. Place your E2E-Tests into the folder ```test/e2e/src```
