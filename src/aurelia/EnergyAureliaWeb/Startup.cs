@@ -9,6 +9,8 @@ namespace skeleton
 {
     public class Startup
     {
+        private IHostingEnvironment _hostingEnvironment;
+
         public static void Main(string[] args)
         {
             var host = new WebHostBuilder()
@@ -31,14 +33,16 @@ namespace skeleton
             if (env.IsDevelopment())
             {
                 // For more details on using the user secret store see http://go.microsoft.com/fwlink/?LinkID=532709
-                builder.AddUserSecrets();
+                //builder.AddUserSecrets();
 
                 // This will push telemetry data through Application Insights pipeline faster, allowing you to view results immediately.
-                builder.AddApplicationInsightsSettings(developerMode: true);
+                //builder.AddApplicationInsightsSettings(developerMode: true);
             }
 
             builder.AddEnvironmentVariables();
             Configuration = builder.Build();
+
+	        this._hostingEnvironment = env;
         }
 
         public IConfigurationRoot Configuration { get; }
@@ -48,11 +52,13 @@ namespace skeleton
         {
             // Add framework services.
 
-            services.AddApplicationInsightsTelemetry(Configuration);
+           // services.AddApplicationInsightsTelemetry(Configuration);
 
             services.AddMvc();
 
-            // Add application services.
+			// Setup Dependency Injection
+			var physicalProvider = this._hostingEnvironment.ContentRootFileProvider;
+	        services.AddSingleton(physicalProvider);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -80,6 +86,10 @@ namespace skeleton
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
+                routes.MapRoute(
+                    name: "Api",
+                    template: "api/{controller}/{action}"
+                );
             });
         }
     }
