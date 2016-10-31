@@ -24,9 +24,11 @@ export default class EnergyDataApi {
             // but would help if multiple pages or other imagined scenarios
             // this shows the usefullness of a energyDataApi class, using promises, and a caching option.
             // we could also have the server return 304 and do the caching that way
-            debugger;
-            this.yearOptions = response.text as any;
-            return this.yearOptions as string[];
+            return response.json().then(data => {
+                debugger;
+                this.yearOptions = data;
+                return this.yearOptions as string[];
+            })
         });
     }
 

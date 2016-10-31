@@ -19,8 +19,9 @@ export class Energy {
         // TODO loading indicators
     }
 
-    public initialize() {
+    public attached() {
         const yearOptionsPromise = this.energyDataApi.getYearOptions().then((options: string[]) => {
+            debugger;
             this.yearOptions = options;
         })
 

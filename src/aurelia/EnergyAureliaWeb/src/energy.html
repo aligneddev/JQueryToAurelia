@@ -1,3 +1,40 @@
 <template>
-    <h1>Energy</h1>
+	<section class="au-animate">
+		<div class="row">
+			<h1>Energy with Aurelia</h1>
+		</div>
+		<div class="row">
+			Energy information from: https://datamarket.azure.com/browse/data?price=free, https://api.datamarket.azure.com/UnitedNations/Energy/
+			<br /> Units in <span id="unit"></span>
+		</div>
+		<div class="row">
+			<select value.bind="yearOptions">
+                <option repeat.for="option of options" value.bind="option">
+                    ${option}
+                </option>
+            </select>
+		</div>
+
+		<div class="row" style="margin-top: 20px; display:none;">
+			<div class="container">
+				<div class="row">
+					<div class="table-responsive">
+						<table id="dataTable" class="table table-condensed table-hover">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>Country</th>
+									<th>Quantity</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 </template>
