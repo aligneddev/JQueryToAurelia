@@ -8,8 +8,8 @@
 			<br /> Units in <span id="unit"></span>
 		</div>
 		<div class="row">
-			<select value.bind="yearOptions">
-                <option repeat.for="option of options" value.bind="option">
+			<select value.bind="selectedOption">
+                <option repeat.for="option of yearOptions" value.bind="option">
                     ${option}
                 </option>
             </select>
