@@ -6,7 +6,7 @@ export class App {
   public configureRouter(config: RouterConfiguration, router: Router) {
     config.title = 'Aurelia Energy';
     config.map([
-      { route: ['', 'energy'], name: 'energy', moduleId: 'energy', nav: true, title: 'Energy' }
+      { route: ['', 'energy'], name: 'energy', moduleId: 'energy/energy', nav: true, title: 'Energy' }
     ]);
 
     this.router = router;

@@ -8,7 +8,7 @@ System.config({
   },
   map: {
     "aurelia-animator-css": "npm:aurelia-animator-css@1.0.1",
-    "aurelia-bootstrapper": "npm:aurelia-bootstrapper@1.0.0",
+    "aurelia-bootstrapper": "npm:aurelia-bootstrapper@1.0.1",
     "aurelia-fetch-client": "npm:aurelia-fetch-client@1.0.1",
     "aurelia-framework": "npm:aurelia-framework@1.0.7",
     "aurelia-history-browser": "npm:aurelia-history-browser@1.0.0",
@@ -68,7 +68,7 @@ System.config({
       "aurelia-pal": "npm:aurelia-pal@1.0.0",
       "aurelia-task-queue": "npm:aurelia-task-queue@1.1.0"
     },
-    "npm:aurelia-bootstrapper@1.0.0": {
+    "npm:aurelia-bootstrapper@1.0.1": {
       "aurelia-event-aggregator": "npm:aurelia-event-aggregator@1.0.0",
       "aurelia-framework": "npm:aurelia-framework@1.0.7",
       "aurelia-history": "npm:aurelia-history@1.0.0",
@@ -201,7 +201,7 @@ System.config({
       "systemjs-json": "github:systemjs/plugin-json@0.1.2"
     },
     "npm:font-awesome@4.6.3": {
-      "css": "github:systemjs/plugin-css@0.1.31"
+      "css": "github:systemjs/plugin-css@0.1.32"
     },
     "npm:inherits@2.0.1": {
       "util": "github:jspm/nodelibs-util@0.1.0"
