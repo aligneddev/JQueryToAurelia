@@ -1,4 +1,4 @@
-import { autoinject } from 'aurelia-framework';
+import { autoinject, computedFrom } from 'aurelia-framework';
 import 'fetch';
 import EnergyRowViewModel from './EnergyRowViewModel';
 import EnergyDataApi from './EnergyDataApi';
@@ -7,6 +7,12 @@ export class Energy {
     public yearOptions: string[] = [];
     public selectedOption = 'all';
     public energyData: EnergyRowViewModel[] = [];
+
+    @computedFrom('energyData')
+    get showEnergyDataTable() {
+        debugger;
+        return this.energyData.length > 0;
+    }
 
     /**
      * The selected row that was clicked for deatils.
@@ -33,7 +39,7 @@ export class Energy {
 
     public getEnergyData(option: string) {
         return this.energyDataApi.getEnergyData(option).then((energyData) => {
-            var vmList = energyData.map((data) => {
+            const vmList = energyData.map((data) => {
                 return new EnergyRowViewModel(data);
             });
             this.energyData = vmList;
