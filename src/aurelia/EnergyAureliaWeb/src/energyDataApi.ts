@@ -25,7 +25,6 @@ export default class EnergyDataApi {
             // this shows the usefullness of a energyDataApi class, using promises, and a caching option.
             // we could also have the server return 304 and do the caching that way
             return response.json().then(data => {
-                debugger;
                 this.yearOptions = data;
                 return this.yearOptions as string[];
             })
@@ -33,6 +32,10 @@ export default class EnergyDataApi {
     }
 
     public getEnergyData(option: string): Promise<EnergyDataDto[]> {
-        return this.http.fetch(`/api/energy/solar?year=${option}`);
+        return this.http.fetch(`/api/energy/solar?year=${option}`).then((response) => {
+            return response.json().then(data => {
+                return data;
+            });
+        });
     }
 }
