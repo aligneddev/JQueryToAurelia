@@ -19,6 +19,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="table-responsive">
+								<require from="./energyDataRowTemplate.html"></require>
 						<table id="dataTable" class="table table-condensed table-hover">
 							<thead>
 								<tr>
@@ -29,7 +30,7 @@
 							</thead>
 							<tbody>
 								<!--http://aurelia.io/hub.html#/doc/article/aurelia/framework/latest/cheat-sheet/4-->
-								<tr repeat.for="model of energyData" as-element="compose" view="./energyDataRowTemplate.html">
+								<tr repeat.for="rowVm of energyData" as-element="compose" view="./energyDataRowTemplate.html">
 								</tr>
 							</tbody>
 						</table>
