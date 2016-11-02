@@ -20,7 +20,6 @@ export class Energy {
 
 
     constructor(private energyDataApi: EnergyDataApi) {
-        // TODO: add computeds
         // TODO loading indicators
     }
 

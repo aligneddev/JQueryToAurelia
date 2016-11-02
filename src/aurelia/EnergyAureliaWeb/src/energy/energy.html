@@ -8,7 +8,7 @@
 			<br /> Units in <span id="unit"></span>
 		</div>
 		<div class="row">
-			<select value.bind="selectedOption">
+			<select value.bind="selectedOption" change.delegate="yearOptionSelected(selectedOption)">
                 <option repeat.for="option of yearOptions" value.bind="option">
                     ${option}
                 </option>
