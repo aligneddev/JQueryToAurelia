@@ -1,4 +1,5 @@
-import { autoinject, computedFrom } from 'aurelia-framework';
+import { autoinject } from 'aurelia-framework';
+import { Router } from 'aurelia-router';
 import 'fetch';
 import EnergyRowViewModel from './EnergyRowViewModel';
 import EnergyDataApi from './EnergyDataApi';
@@ -7,23 +8,15 @@ export class Energy {
     public yearOptions: string[] = [];
     public selectedOption = 'all';
     public energyData: EnergyRowViewModel[] = [];
-
-    @computedFrom('energyData')
     get showEnergyDataTable() {
         return this.energyData.length > 0;
     }
 
-    /**
-     * The selected row that was clicked for deatils.
-     */
-    public rowVmToShowDetailsFor: EnergyRowViewModel;
-
-
-    constructor(private energyDataApi: EnergyDataApi) {
+    constructor(private energyDataApi: EnergyDataApi, private router: Router) {
         // TODO loading indicators
     }
 
-    public attached() {
+    public activate() {
         const yearOptionsPromise = this.energyDataApi.getYearOptions().then((options: string[]) => {
             this.yearOptions = options;
         })
@@ -38,7 +31,7 @@ export class Energy {
     public getEnergyData(option: string) {
         return this.energyDataApi.getEnergyData(option).then((energyData) => {
             const vmList = energyData.map((data) => {
-                return new EnergyRowViewModel(data);
+                return new EnergyRowViewModel(data, this.router);
             });
             this.energyData = vmList;
         });
