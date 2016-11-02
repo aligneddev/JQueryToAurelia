@@ -15,7 +15,11 @@ export default class EnergyRowViewModel {
         // show details in a sub view instead of a modal
         // http://www.elanderson.net/2015/10/aurelia-routing-with-a-parameter/
         // https://zombiecodekill.com/2016/07/03/aurelia-routing-fundamentals/
-        this.router.navigate('#/energy-details');
+        // https://github.com/softchris/aurelia in avengers/edit
+        // http://aurelia.io/hub.html#/doc/article/aurelia/framework/latest/cheat-sheet/7
+        // puts it all in the query string, yuck!, but it works, there must be a better way
+        let urlDetail = this.router.generate('energy-details', {model: this.model});
+        this.router.navigate(urlDetail);
     }
 
     public closeDetails() {
