@@ -10,7 +10,6 @@ export class Energy {
 
     @computedFrom('energyData')
     get showEnergyDataTable() {
-        debugger;
         return this.energyData.length > 0;
     }
 

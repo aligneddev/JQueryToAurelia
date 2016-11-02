@@ -60,6 +60,7 @@
       "aurelia-fetch-client": "npm:aurelia-fetch-client@^1.0.0",
       "aurelia-framework": "npm:aurelia-framework@^1.0.7",
       "aurelia-history-browser": "npm:aurelia-history-browser@^1.0.0",
+      "aurelia-html-import-template-loader": "npm:aurelia-html-import-template-loader@^1.0.0",
       "aurelia-http-client": "npm:aurelia-http-client@^1.0.2",
       "aurelia-loader-default": "npm:aurelia-loader-default@^1.0.0",
       "aurelia-logging-console": "npm:aurelia-logging-console@^1.0.0",
