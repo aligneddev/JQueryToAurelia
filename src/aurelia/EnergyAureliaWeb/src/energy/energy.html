@@ -5,6 +5,7 @@
 			<h1>Energy with Aurelia</h1>
 		</div>
 		<div class="row">
+
 			Energy information from: https://datamarket.azure.com/browse/data?price=free, https://api.datamarket.azure.com/UnitedNations/Energy/
 			<br /> Units in <span id="unit"></span>
 		</div>
@@ -17,26 +18,21 @@
 		</div>
 
 		<div class="row" style="margin-top: 20px;" if.bind="showEnergyDataTable">
-			<div class="container">
-				<div class="row">
-					<div class="table-responsive">
-						<table id="dataTable" class="table table-condensed table-hover">
-							<thead>
-								<tr>
-									<th>#</th>
-									<th>Country</th>
-									<th>Quantity</th>
-								</tr>
-							</thead>
-							<tbody>
-								<!--http://aurelia.io/hub.html#/doc/article/aurelia/framework/latest/cheat-sheet/4-->
-								<tr repeat.for="rowVm of energyData" as-element="compose" view="./energyDataRowTemplate.html" 
-									 click.delegate="rowVm.showDetails()">
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
+			<div class="table-responsive">
+				<table id="dataTable" class="table table-condensed table-hover">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Country</th>
+							<th>Quantity</th>
+						</tr>
+					</thead>
+					<tbody>
+						<!--http://aurelia.io/hub.html#/doc/article/aurelia/framework/latest/cheat-sheet/4-->
+						<tr repeat.for="rowVm of energyData" as-element="compose" view="./energyDataRowTemplate.html" click.delegate="rowVm.showDetails()">
+						</tr>
+					</tbody>
+				</table>
 			</div>
 		</div>
 	</section>
