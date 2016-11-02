@@ -40,12 +40,14 @@
 				<h4 class="modal-title">Details</h4>
 			</div>
 			<div class="modal-body">
-				<li data-bind="text: model.countryName"></li>
-				<li data-bind="text: model.countryId"></li>
-				<li data-bind="text: model.quantity"></li>
-				<li data-bind="text: model.year"></li>
-				<li data-bind="text: model.commodityTransactionName"></li>
-				<li data-bind="text: model.unit"></li>
+				<ul>
+					<li data-bind="text: model.countryName"></li>
+					<li data-bind="text: model.countryId"></li>
+					<li data-bind="text: model.quantity"></li>
+					<li data-bind="text: model.year"></li>
+					<li data-bind="text: model.commodityTransactionName"></li>
+					<li data-bind="text: model.unit"></li>
+				</ul>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal" data-bind="click: closeDetails">Close</button>
