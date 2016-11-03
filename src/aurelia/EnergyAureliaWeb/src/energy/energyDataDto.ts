@@ -10,7 +10,7 @@ export default class EnergyDataDto {
     public commodityTransactionId: string;
     public commodityTransactionName: string;
     public year: number;
-    public unit : string;
+    public unit: string;
     public quantity: string;
     public footnoteSequenceId: string;
 }

@@ -11,17 +11,18 @@ export default class EnergyRowViewModel {
      * Show the details after a row tap or click.
      */
     public showDetails() {
-        debugger;
         // show details in a sub view instead of a modal
         // http://www.elanderson.net/2015/10/aurelia-routing-with-a-parameter/
         // https://zombiecodekill.com/2016/07/03/aurelia-routing-fundamentals/
         // https://github.com/softchris/aurelia in avengers/edit
         // http://aurelia.io/hub.html#/doc/article/aurelia/framework/latest/cheat-sheet/7
         // puts it all in the query string, yuck!, but it works, there must be a better way
-        let urlDetail = this.router.generate('energy-details', {model: this.model});
+        // http://stackoverflow.com/questions/40390370/passing-an-object-with-aurelia-router-navigate-to-a-view/ - just send the id
+        // let urlDetail = this.router.generate('energy-details', {model: this.model});
+
+        let urlDetail = this.router.generate('energy-details', { id: this.model.countryId, year: this.model.year });
         this.router.navigate(urlDetail);
     }
 
-    public closeDetails() {
-    }
+    public closeDetails() {}
 }
