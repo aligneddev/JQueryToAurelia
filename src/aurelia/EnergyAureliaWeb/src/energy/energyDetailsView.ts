@@ -1,11 +1,22 @@
 import { autoinject } from 'aurelia-framework';
-import { Router } from 'aurelia-router';
+import { NavigationInstruction, RouteConfig, Router } from 'aurelia-router';
+import EnergyDataDto from './energyDataDto';
+import EnergyDataApi from './EnergyDataApi';
+
 @autoinject
 export class EnergyDetailsView {
-    constructor(private router: Router) {
+    private model: EnergyDataDto;
+
+    constructor(private energyDataApi: EnergyDataApi, private router: Router) {
     }
 
-    public activate(params, routeConfig, $navigationInstruction) {
-        debugger;
+    public activate(params: any, routeConfig: RouteConfig, $navigationInstruction: NavigationInstruction) {
+        if (!params) {
+            throw new Error('params information is required');
+        }
+
+        this.energyDataApi.getEnergyDataByIdAndYear(params.id, params.year).then(model => {
+            this.model = model;
+        });
     }
 }

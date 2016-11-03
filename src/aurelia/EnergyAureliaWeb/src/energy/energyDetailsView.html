@@ -1,11 +1,11 @@
 <template>
 	<section class="au-animate">
-		<h1>Details for ${countryName} in ${year}</h1>
+		<h1>Details for ${model.countryName} in ${model.year}</h1>
 		<ul>
-			<li> ${quantity}</li>
-			<li> ${year}</li>
-			<li> ${commodityTransactionName}</li>
-			<li> ${unit}</li>
+			<li> ${model.quantity}</li>
+			<li> ${model.year}</li>
+			<li> ${model.commodityTransactionName}</li>
+			<li> ${model.unit}</li>
 		</ul>
 		<br />
 		<a route-href="route: energy;">Back to Main</a>
