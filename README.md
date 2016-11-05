@@ -121,3 +121,26 @@ get the html file and place it in the DOm
 
 computed : rowVmToShowDetailsFor
 with console.log to see when it computes
+
+
+# Step 4: Aurelia
+This was my oportunity to stop just reading about Aurelia to actually building something with it.
+src/aurelia/EnergyWebAurelia
+started from the http://aurelia.io
+https://github.com/aurelia/skeleton-navigation
+ - I used AspNetCore TypeScript using gulp
+ - wanted to AspNetCore and webpack for fun, but… https://github.com/aurelia/skeleton-navigation/issues/703
+Follow the README there for getting going
+jspm install
+npm install
+
+gulp build (move from src to dist)
+or gulp watch
+
+dotnet restore
+dotnet build
+should be enough to get it running on http://localhost:5000
+
+# Step 5: AngularJS 2.0 (someday)
+# Step 6: ReactJs/Flux/Redux (someday)
+# Step 7: Aurelia with https://github.com/aspnet/JavaScriptServices/
