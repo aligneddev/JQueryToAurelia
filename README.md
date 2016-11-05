@@ -60,7 +60,7 @@ Then it should show the details
 Given I select a different year option
 Then it should show the new data in the table
 
-Show a loading indicator for at least 500 ms while loading data
+Show a loading indicator while loading data
 
 
 ## Step 1 - JQuery in the html
