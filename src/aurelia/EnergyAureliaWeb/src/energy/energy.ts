@@ -19,7 +19,7 @@ export class Energy {
     public activate() {
         const yearOptionsPromise = this.energyDataApi.getYearOptions().then((options: string[]) => {
             this.yearOptions = options;
-        })
+        });
 
         return Promise.all([yearOptionsPromise, this.getEnergyData(this.selectedOption)]);
     }

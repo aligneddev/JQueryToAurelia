@@ -1,4 +1,9 @@
 export default class HttpFake {
+
+    public static createHttpFake(): any {
+        return new HttpFake();
+    }
+
     public items: any[];
 
     public fetch(url) {
@@ -7,9 +12,5 @@ export default class HttpFake {
         });
     }
 
-    public configure(func) {}
-}
-
-function createHttpFake(): any {
-    return new HttpFake();
+    public configure(func) { }
 }
