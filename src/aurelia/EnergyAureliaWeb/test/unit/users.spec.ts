@@ -1,36 +1,36 @@
-import {Users} from 'src/users';
-import {HttpClient} from 'aurelia-fetch-client';
+// import {Users} from 'src/users';
+// import {HttpClient} from 'aurelia-fetch-client';
 
-class HttpStub {
-  items: any[];
+// class HttpStub {
+//   items: any[];
   
-  fetch(url) {
-    return new Promise(resolve => {
-      resolve({ json: () => this.items });
-    });
-  }
+//   fetch(url) {
+//     return new Promise(resolve => {
+//       resolve({ json: () => this.items });
+//     });
+//   }
   
-  configure(func) { }
-}
+//   configure(func) { }
+// }
 
-function createHttpStub(): any {
-  return new HttpStub();
-}
+// function createHttpStub(): any {
+//   return new HttpStub();
+// }
 
-describe('the Users module', () => {
+// describe('the Users module', () => {
 
-  it('sets fetch response to users', (done) => {
-    var http = createHttpStub(),
-        sut = new Users(<HttpClient>http),
-        itemStubs = [1],
-        itemFake = [2];
+//   it('sets fetch response to users', (done) => {
+//     var http = createHttpStub(),
+//         sut = new Users(<HttpClient>http),
+//         itemStubs = [1],
+//         itemFake = [2];
         
-    http.items = itemStubs;
+//     http.items = itemStubs;
     
-    sut.activate().then(() => {
-      expect(sut.users).toBe(itemStubs);
-      expect(sut.users).not.toBe(itemFake);
-      done();
-    });
-  });
-});
+//     sut.activate().then(() => {
+//       expect(sut.users).toBe(itemStubs);
+//       expect(sut.users).not.toBe(itemFake);
+//       done();
+//     });
+//   });
+// });
