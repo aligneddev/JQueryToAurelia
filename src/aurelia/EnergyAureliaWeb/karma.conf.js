@@ -36,7 +36,8 @@ module.exports = function(config) {
     },
     files: [
       'test/unit/setup.ts',
-      'test/unit/*.ts'
+      'test/unit/*.ts',
+      '*.spec.ts'
     ],
     proxies:{
       '/base/jspm_packages/' : '/base/wwwroot/jspm_packages/'

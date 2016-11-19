@@ -1,22 +1,11 @@
-import {App} from '../../src/app';
-
-class RouterStub {
-  routes;
-
-  configure(handler) {
-    handler(this);
-  }
-
-  map(routes) {
-    this.routes = routes;
-  }
-}
+import { App } from '../../src/app';
+import RouterFake from './routerFake';
 
 describe('the App module', () => {
   var sut, mockedRouter;
 
   beforeEach(() => {
-    mockedRouter = new RouterStub();
+    mockedRouter = new RouterFake();
     sut = new App();
     sut.configureRouter(mockedRouter, mockedRouter);
   });
@@ -30,6 +19,7 @@ describe('the App module', () => {
   });
 
   it('should have a energy route', () => {
-    expect(sut.router.routes).toContain({ route: ['','energy'], name: 'energy',  moduleId: 'energy/energy', nav: true, title:'Energy' });
+    expect(sut.router.routes).toContain(
+      { route: ['', 'energy'], name: 'energy', moduleId: 'energy/energy', nav: true, title: 'Energy' });
   });
 });

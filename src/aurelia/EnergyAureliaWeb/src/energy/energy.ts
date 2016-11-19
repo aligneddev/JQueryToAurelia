@@ -1,8 +1,8 @@
 import { autoinject } from 'aurelia-framework';
 import { Router } from 'aurelia-router';
 import 'fetch';
-import EnergyRowViewModel from './EnergyRowViewModel';
-import EnergyDataApi from './EnergyDataApi';
+import EnergyRowViewModel from './energyRowViewModel';
+import EnergyDataApi from './energyDataApi';
 @autoinject
 export class Energy {
     public yearOptions: string[] = [];

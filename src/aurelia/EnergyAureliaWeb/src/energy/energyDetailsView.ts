@@ -1,7 +1,7 @@
 import { autoinject } from 'aurelia-framework';
 import { NavigationInstruction, RouteConfig, Router } from 'aurelia-router';
 import EnergyDataDto from './energyDataDto';
-import EnergyDataApi from './EnergyDataApi';
+import EnergyDataApi from './energyDataApi';
 
 @autoinject
 export class EnergyDetailsView {
