@@ -1,4 +1,4 @@
-import EnergyDataApi from './energyDataApi';
+import EnergyDataService from './energy-data.service';
 import EnergyRowViewModel from './energyRowViewModel';
 import { Component, OnInit } from '@angular/core';
 
@@ -11,10 +11,10 @@ export class EnergyComponent implements OnInit {
   public yearOptions: string[] = [];
   public selectedOption = 'all';
   public energyData: EnergyRowViewModel[] = [];
-  constructor(private energyDataApi: EnergyDataApi) { }
+  constructor(private energyDataService: EnergyDataService) { }
 
   ngOnInit() {
-    const yearOptionsPromise = this.energyDataApi.getYearOptions().then((options: string[]) => {
+    const yearOptionsPromise = this.energyDataService.getYearOptions().then((options: string[]) => {
       this.yearOptions = options;
     });
 
@@ -26,7 +26,7 @@ export class EnergyComponent implements OnInit {
   }
 
   public getEnergyData(option: string) {
-    return this.energyDataApi.getEnergyData(option).then((energyData) => {
+    return this.energyDataService.getEnergyData(option).then((energyData) => {
       const vmList = energyData.map((data) => {
         return new EnergyRowViewModel(data);
       });

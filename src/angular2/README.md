@@ -21,6 +21,7 @@ After saving, it takes about 1.5 to 2 seconds for the webpack build and the brow
 The CLI project is using [webpack](https://webpack.github.io/).
 
 ### Create a component
+
 `ng g component energy`
 this creates a folder `energy` with the component, spec, html and css files. It also sets it up in the app.module.
 
@@ -28,6 +29,7 @@ this creates a folder `energy` with the component, spec, html and css files. It 
 
 [HTTP with Promises](https://angular.io/docs/ts/latest/tutorial/toh-pt6.html)
 
+I [simulated the WebApi](https://angular.io/docs/ts/latest/tutorial/toh-pt6.html) (search for app.module.ts (v2) in this page) so I wouldn't have to bring in Asp.Net to this project.
 
 ## This was copied from CLI generated Readme
 
