@@ -1,5 +1,5 @@
+import EnergyDataDto from './energyDataDto';
 import EnergyDataJsonService from './energy-data-json.service';
-import EnergyRowViewModel from './energyRowViewModel';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class EnergyComponent implements OnInit {
   public yearOptions: string[] = [];
   public selectedOption = 'all';
-  public energyData: EnergyRowViewModel[] = [];
+  public energyData: EnergyDataDto[] = [];
   constructor(private energyDataService: EnergyDataJsonService) { }
 
   ngOnInit() {
@@ -27,10 +27,11 @@ export class EnergyComponent implements OnInit {
 
   public getEnergyData(option: string) {
     return this.energyDataService.getEnergyData(option).then((energyData) => {
-      const vmList = energyData.map((data) => {
-        return new EnergyRowViewModel(data);
-      });
-      this.energyData = vmList;
+      this.energyData = energyData;
     });
+  }
+
+  public showDetails(data: EnergyDataDto) {
+    debugger;
   }
 }

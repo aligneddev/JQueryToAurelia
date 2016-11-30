@@ -32,9 +32,15 @@ this creates a folder `energy` with the component, spec, html and css files. It 
 I [simulated the WebApi](https://angular.io/docs/ts/latest/tutorial/toh-pt6.html) (search for app.module.ts (v2) in this page) so I wouldn't have to bring in Asp.Net to this project.
 return {yearOptions, solar} corresponds with the api/yearOptions and api/solar? in the energy-data.service.ts
 [more on in-mem-web-api](https://angular.io/docs/ts/latest/guide/server-communication.html#!#in-mem-web-api).
-https://github.com/angular/in-memory-web-api/blob/master/examples/hero-data.service.ts
+[another example](https://github.com/angular/in-memory-web-api/blob/master/examples/hero-data.service.ts)
 
 However, I then changed it just to grab the json from the energy-data.service.ts.
+
+### energy data row
+
+I considered a component for each row (as I did in Aurelia with the EnergyDataRowViewModel and template.html), but (click) on the tr should work fine.
+I will consider changing the Aurelia approach, but that was done to show the templating/component feature in that project.
+
 
 ## This was copied from CLI generated Readme
 
