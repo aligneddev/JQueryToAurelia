@@ -41,6 +41,24 @@ However, I then changed it just to grab the json from the energy-data.service.ts
 I considered a component for each row (as I did in Aurelia with the EnergyDataRowViewModel and template.html), but (click) on the tr should work fine.
 I will consider changing the Aurelia approach, but that was done to show the templating/component feature in that project.
 
+### external libraries
+
+Bringing in BootStrap
+Using the [ng-BootStrap](https://ng-bootstrap.github.io/#/getting-started).
+http://stackoverflow.com/questions/38413044/how-to-add-ng-bootstrap-to-an-angular-cli-broccoli-version-project
+`npm install --save @ng-bootstrap/ng-bootstrap`
+
+in angular-cli.json
+add `"../node_modules/@ng-bootstrap/ng-bootstrap/bundles/ng-bootstrap.js"` to scripts // this caused me 
+
+`VM35625:9 Uncaught TypeError: Cannot read property 'Observable' of undefined(…)webpackUniversalModuleDefinition @ VM35625:9(anonymous function) @ VM35625:10module.exports @ scripts.bundle.js:28369 @ scripts.bundle.js:6__webpack_require__ @ inline.bundle.js:53694 @ scripts.bundle.js:37__webpack_require__ @ inline.bundle.js:53webpackJsonpCallback @ inline.bundle.js:24(anonymous function) @ scripts.bundle.js:1
+main.bundle.js:417`
+
+that I was unable to get around.
+and `"../node_modules/bootstrap/dist/css/bootstrap.css"` to styles
+others can be placed in the [angular-cli.json scripts array](http://blog.dmbcllc.com/adding-css-and-javascript-to-an-angular-2-cli-project/) or [docs](https://github.com/angular/angular-cli#global-library-installation).
+
+
 
 ## This was copied from CLI generated Readme
 
