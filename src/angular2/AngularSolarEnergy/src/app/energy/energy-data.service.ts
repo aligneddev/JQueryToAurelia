@@ -23,25 +23,21 @@ export default class EnergyDataService {
         }
 
         // return the promise
-        return this.http.get('/api/energy/yearOptions').toPromise().then((response) => {
+        return this.http.get('/api/yearOptions').toPromise().then((response) => {
             // let's cache the results client side, it doesn't help in the current setup (we only load it once), 
             // but would help if multiple pages or other imagined scenarios
             // this shows the usefullness of a energyDataApi class, using promises, and a caching option.
             // we could also have the server return 304 and do the caching that way
-            return response.json().then((data: string[]) => {
-                this.yearOptions = data;
-                return this.yearOptions as string[];
-            });
-        });
+            this.yearOptions = response.json().data;
+            return this.yearOptions as string[];
+        }).catch(this.handleError);
     }
 
     public getEnergyData(option: string): Promise<EnergyDataDto[]> {
-        return this.http.get(`/api/energy/solar?year=${option}`).toPromise().then((response) => {
-            return response.json().then(data => {
-                this.energyDataCache = data;
-                return data;
-            });
-        });
+        return this.http.get(`/api/solar?year=${option}`).toPromise().then((response) => {
+            this.energyDataCache = response.json().data;
+            return this.energyDataCache;
+        }).catch(this.handleError);
     }
 
     public getEnergyDataByIdAndYear(id: string, year: number): Promise<EnergyDataDto> {
@@ -58,5 +54,10 @@ export default class EnergyDataService {
         return this.energyDataCache.filter((item) => {
             return item.countryId.toString() === id.toString() && item.year.toString() === year.toString();
         })[0];
+    }
+
+    private handleError(error: any): Promise<any> {
+        console.error('An error occurred', error); // for demo purposes only
+        return Promise.reject(error.message || error);
     }
 }

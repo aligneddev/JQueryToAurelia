@@ -12,7 +12,7 @@ I created the project using `ng new`.
 To run the project `ng serve --watch`. This will watch for file changes and reload the browser with BrowserSync.
 I saw `** NG Live Development Server is running on http://localhost:4200. **` in the console and things are working.
 It took 4.83 seconds to get things running.
-After saving, it takes about 1.5 to 2 seconds for the webpack build and the browser sync reload to complete.
+After saving, it takes about 2 to 5 seconds for the webpack build and the browser sync reload to complete. I wonder what this will be for a large TS project...
 
 `ng serve --prod` to serve 'minified'.
 3 bundles in js files, inline, styles, main with cache busting int the name. There is about 210Kb of JavaScript.
@@ -30,6 +30,11 @@ this creates a folder `energy` with the component, spec, html and css files. It 
 [HTTP with Promises](https://angular.io/docs/ts/latest/tutorial/toh-pt6.html)
 
 I [simulated the WebApi](https://angular.io/docs/ts/latest/tutorial/toh-pt6.html) (search for app.module.ts (v2) in this page) so I wouldn't have to bring in Asp.Net to this project.
+return {yearOptions, solar} corresponds with the api/yearOptions and api/solar? in the energy-data.service.ts
+[more on in-mem-web-api](https://angular.io/docs/ts/latest/guide/server-communication.html#!#in-mem-web-api).
+https://github.com/angular/in-memory-web-api/blob/master/examples/hero-data.service.ts
+
+However, I then changed it just to grab the json from the energy-data.service.ts.
 
 ## This was copied from CLI generated Readme
 
