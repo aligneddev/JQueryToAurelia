@@ -1,4 +1,4 @@
-import EnergyDataService from './energy-data.service';
+import EnergyDataJsonService from './energy-data-json.service';
 import EnergyRowViewModel from './energyRowViewModel';
 import { Component, OnInit } from '@angular/core';
 
@@ -11,7 +11,7 @@ export class EnergyComponent implements OnInit {
   public yearOptions: string[] = [];
   public selectedOption = 'all';
   public energyData: EnergyRowViewModel[] = [];
-  constructor(private energyDataService: EnergyDataService) { }
+  constructor(private energyDataService: EnergyDataJsonService) { }
 
   ngOnInit() {
     const yearOptionsPromise = this.energyDataService.getYearOptions().then((options: string[]) => {
