@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { EnergyComponent } from './energy/energy.component';
 import EnergyDataJsonService from './energy/energy-data-json.service';
 
+import {routing} from './app.routing';
+
 // Imports for loading & configuring the in-memory web api
 // https://angular.io/docs/ts/latest/tutorial/toh-pt6.html
 // import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
@@ -21,6 +23,7 @@ import EnergyDataJsonService from './energy/energy-data-json.service';
   ],
   imports: [
     BrowserModule,
+    routing,
     FormsModule,
     HttpModule,
     // us the in memory data service => InMemoryWebApiModule.forRoot(InMemoryDataService),
