@@ -14,7 +14,7 @@ export default class EnergyDataJsonService extends EnergyDataService {
     }
 
     protected parseEnergyDataResponse(response: Response) {
-        return this.toCamel(response.json().d.results);
+        return this.toCamel(response.json());
     }
 
     private toCamel(o) {

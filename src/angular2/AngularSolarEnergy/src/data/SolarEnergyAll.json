@@ -1,7 +1,6 @@
-{
-    "d": {
-        "results": [
-            {
+[
+
+         {
                 "__metadata": {
                     "id": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=36,DataSeriesId='ES',TransactionCode='01',Year=1999)",
                     "uri": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=36,DataSeriesId='ES',TransactionCode='01',Year=1999)",
@@ -1701,7 +1700,4 @@
                 "Quantity": 1,
                 "FootnoteSequenceId": "0"
             }
-        ],
-        "__next": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values?$filter=DataSeriesId%20eq%20'ES'%20and%20CommodityTransactionId%20eq%20'ES01'&$skiptoken=232,'ES','01',2005"
-    }
-}
+]

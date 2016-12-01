@@ -49,7 +49,6 @@ Using the [ng-BootStrap](https://ng-bootstrap.github.io/#/getting-started).
 `npm install --save @ng-bootstrap/ng-bootstrap`
 
 in angular-cli.json
-add `"../node_modules/@ng-bootstrap/ng-bootstrap/bundles/ng-bootstrap.js"` to scripts
 and `"../node_modules/bootstrap/dist/css/bootstrap.css"` to styles
 others can be placed in the [angular-cli.json scripts array](http://blog.dmbcllc.com/adding-css-and-javascript-to-an-angular-2-cli-project/) or [docs](https://github.com/angular/angular-cli#global-library-installation).
 
@@ -59,6 +58,7 @@ others can be placed in the [angular-cli.json scripts array](http://blog.dmbcllc
 main.bundle.js:417`
 
 that I was unable to get around until an answer came on the StackOverflow question.
+[Here's my write-up](http://aligneddev.net/blog/2016/Ng-Bootstrap-with-Angular-CLI/) on the setup.
 
 ## Routing for Master Details
 
