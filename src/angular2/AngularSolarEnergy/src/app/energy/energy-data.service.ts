@@ -56,19 +56,23 @@ export default class EnergyDataService {
         return response.json().data;
     }
 
-    public getEnergyDataByIdAndYear(id: string, year: number): Promise<EnergyDataDto> {
+    public getEnergyDataByIdAndYear(countryId: string, year: number): Promise<EnergyDataDto> {
+        if (<any>year === 'all') {
+            throw new Error('Do not pass in all!');
+        }
+
         if (this.energyDataCache.length > 0) {
-            return Promise.resolve(this.findEnergyMatch(id, year));
+            return Promise.resolve(this.findEnergyMatch(countryId, year));
         }
 
         return this.getEnergyData(year.toString()).then((data) => {
-            return Promise.resolve(this.findEnergyMatch(id, year));
+            return Promise.resolve(this.findEnergyMatch(countryId, year));
         });
     }
 
-    private findEnergyMatch(id: string, year: number) {
+    private findEnergyMatch(countryId: string, year: number) {
         return this.energyDataCache.filter((item) => {
-            return item.countryId.toString() === id.toString() && item.year.toString() === year.toString();
+            return item.countryId.toString() === countryId.toString() && item.year.toString() === year.toString();
         })[0];
     }
 

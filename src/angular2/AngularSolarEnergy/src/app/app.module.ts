@@ -9,6 +9,7 @@ import { EnergyComponent } from './energy/energy.component';
 import EnergyDataJsonService from './energy/energy-data-json.service';
 
 import {routing} from './app.routing';
+import { EnergyDetailsComponent } from './energy/energy-details/energy-details.component';
 
 // Imports for loading & configuring the in-memory web api
 // https://angular.io/docs/ts/latest/tutorial/toh-pt6.html
@@ -19,7 +20,8 @@ import {routing} from './app.routing';
 @NgModule({
   declarations: [
     AppComponent,
-    EnergyComponent
+    EnergyComponent,
+    EnergyDetailsComponent
   ],
   imports: [
     BrowserModule,

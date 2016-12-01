@@ -3,7 +3,7 @@
   <br /> Units in <span></span>
 </div>
 <div class="row">
-  <select [(ngModel)]="selectedOption" (ngModelChange)="yearOptionSelected($event)">
+  <select [(ngModel)]="selectedYearOption" (ngModelChange)="yearOptionSelected($event)">
       <option *ngFor="let option of yearOptions" [ngValue]="option">
           {{option}}
       </option>

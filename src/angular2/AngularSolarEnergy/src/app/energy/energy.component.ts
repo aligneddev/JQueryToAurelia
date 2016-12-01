@@ -1,6 +1,8 @@
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 import EnergyDataDto from './energyDataDto';
 import EnergyDataJsonService from './energy-data-json.service';
-import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-energy',
@@ -9,16 +11,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EnergyComponent implements OnInit {
   public yearOptions: string[] = [];
-  public selectedOption = 'all';
+  public selectedYearOption = 'all';
   public energyData: EnergyDataDto[] = [];
-  constructor(private energyDataService: EnergyDataJsonService) { }
+  constructor(private energyDataService: EnergyDataJsonService, private router: Router) { }
 
   ngOnInit() {
     const yearOptionsPromise = this.energyDataService.getYearOptions().then((options: string[]) => {
       this.yearOptions = options;
     });
 
-    return Promise.all([yearOptionsPromise, this.getEnergyData(this.selectedOption)]);
+    return Promise.all([yearOptionsPromise, this.getEnergyData(this.selectedYearOption)]);
   }
 
   public yearOptionSelected(selectedOption: string) {
@@ -32,6 +34,6 @@ export class EnergyComponent implements OnInit {
   }
 
   public showDetails(data: EnergyDataDto) {
-    debugger;
+    this.router.navigate(['/energy-details', data.countryId, data.year]);
   }
 }
