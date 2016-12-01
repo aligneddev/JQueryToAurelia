@@ -70,6 +70,10 @@ clicking on the row will navigate to the details view using the router.
  If the user re-navigates to this component while a getHero request is still inflight, switchMap cancels that old request before calling HeroService.getHero again."
 * "The hero id is a number. Route parameters are always strings. So we convert the route parameter value to a number with the JavaScript (+) operator."
 
+## Tools
+
+[Chrome Extension](https://augury.angular.io/guides/)
+
 ## This was copied from CLI generated Readme
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.21.

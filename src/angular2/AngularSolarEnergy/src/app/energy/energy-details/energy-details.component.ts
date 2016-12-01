@@ -12,7 +12,7 @@ import EnergyDataDto from '../energyDataDto';
   styleUrls: ['./energy-details.component.css']
 })
 export class EnergyDetailsComponent implements OnInit {
-  public selectedEnergyData: EnergyDataDto;
+  public selectedEnergyData: EnergyDataDto =  new EnergyDataDto();
   constructor(private energyDataService: EnergyDataJsonService,
     private route: ActivatedRoute,
     private location: Location) { }
