@@ -58,7 +58,7 @@ others can be placed in the [angular-cli.json scripts array](http://blog.dmbcllc
 `VM35625:9 Uncaught TypeError: Cannot read property 'Observable' of undefined(…)webpackUniversalModuleDefinition @ VM35625:9(anonymous function) @ VM35625:10module.exports @ scripts.bundle.js:28369 @ scripts.bundle.js:6__webpack_require__ @ inline.bundle.js:53694 @ scripts.bundle.js:37__webpack_require__ @ inline.bundle.js:53webpackJsonpCallback @ inline.bundle.js:24(anonymous function) @ scripts.bundle.js:1
 main.bundle.js:417`
 
-that I was unable to get around.
+that I was unable to get around until an answer came on the StackOverflow question.
 
 ## Routing for Master Details
 

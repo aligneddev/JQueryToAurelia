@@ -16,7 +16,6 @@ import { EnergyDetailsComponent } from './energy/energy-details/energy-details.c
 // import {AppModule} from 'angular-in-memory-web-api';
 // import { InMemoryDataService }  from './in-memory-data.service';
 
-
 @NgModule({
   declarations: [
     AppComponent,
