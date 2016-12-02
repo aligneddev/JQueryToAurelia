@@ -3,6 +3,7 @@ import {Router} from '@angular/router';
 
 import EnergyDataDto from './energyDataDto';
 import {IEnergyDataService} from './energy-data-service.interface';
+import {IEnergyDataServiceToken} from './energy-data-service.token';
 
 @Component({
   selector: 'app-energy',
@@ -13,7 +14,8 @@ export class EnergyComponent implements OnInit {
   public yearOptions: string[] = [];
   public selectedYearOption = 'all';
   public energyData: EnergyDataDto[] = [];
-  constructor(@Inject(IEnergyDataService) private energyDataService: IEnergyDataService, private router: Router) { }
+  constructor(@Inject(IEnergyDataServiceToken) private energyDataService: IEnergyDataService, private router: Router) {
+  }
 
   ngOnInit() {
     const yearOptionsPromise = this.energyDataService.getYearOptions().then((options: string[]) => {

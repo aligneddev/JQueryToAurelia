@@ -46,7 +46,24 @@ I will consider changing the Aurelia approach, but that was done to show the tem
 [It's possible with an Opaque Token](https://angular.io/docs/ts/latest/guide/dependency-injection.html#!#opaquetoken)
 
 Example is the IEnergyDataService that the EnergyDataService and EnergyDataJsonService. I want to be able to switch between JSON, api calling one, or a test data service in the app.module.ts or in a spec.
+See the energy/energy-data-service.token.ts for my attempt
 
+    `import { OpaqueToken } from '@angular/core';
+     export let IEnergyDataServiceToken = new OpaqueToken('./energy-data-service.interface');`
+
+app.module.ts has
+
+    `import EnergyDataJsonService from './energy/energy-data-json.service';
+     import {IEnergyDataServiceToken} from './energy/energy-data-service.token';
+     ....
+     providers: [{ provide: IEnergyDataServiceToken, useClass: EnergyDataJsonService }]`
+
+and energy/energy.component.ts gets the token injected
+
+    `import {IEnergyDataService} from './energy-data-service.interface';
+     import {IEnergyDataServiceToken} from './energy-data-service.token';
+     ...
+     constructor(@Inject(IEnergyDataServiceToken) private energyDataService: IEnergyDataService, private router: Router) {}`
 
 ## external libraries
 
@@ -88,7 +105,7 @@ clicking on the row will navigate to the details view using the router.
 `ng e2e` via Protractor (Selenium)
 
 I like having the spec files next to the component code.
-This seems really complicated with testing coupled to the html of the component?
+This seems really complicated with testing coupled to the html of the component, but can allow for testing of the binding and clicks in unit tests.
 
 from the default energy.component.spec.ts created by the CLI
 `Chrome 54.0.2840 (Windows 7 0.0.0) EnergyComponent should create FAILED
@@ -106,6 +123,9 @@ Resources:
 
 * [Angular2 (2.0.0-beta.13 so things have changed :-()) TDD in ES6](https://www.youtube.com/watch?v=2u7mHBCCSQ4)
 * [Testing Strategies with Angular 2](https://youtu.be/f493Xf0F2yU) from Angular Connect 10/01/2016
+* [A Test-Driven Development Introduction to Angular 2](https://keyholesoftware.com/2016/05/16/test-driven-intro-angular2/)  2016-05-16 (beta)
+* [Testing Angular 2 in 15min](https://youtu.be/bR7JbyjT8ZM) 2016-10-21
+* [Testing all your Tasks - Julie Ralph](https://youtu.be/DltUEDy7ItY?list=PLOETEcp3DkCq788xapkP_OU-78jhTf68j) 2016-05-04
 
 
 ## Ahead of Time Compilation

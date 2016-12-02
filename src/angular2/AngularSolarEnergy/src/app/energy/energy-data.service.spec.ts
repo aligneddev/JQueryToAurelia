@@ -1,16 +1,16 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async, inject } from '@angular/core/testing';
-import EnergyDataService from './energy-data.service';
+import EnergyDataJsonService from './energy-data-json.service';
 
 describe('EnergyDataService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [EnergyDataService]
+      providers: [EnergyDataJsonService]
     });
   });
 
-  it('should ...', inject([EnergyDataService], (service: EnergyDataService) => {
-    expect(service).toBeTruthy();
-  }));
+  // it('should be created', inject([EnergyDataJsonService], (service: EnergyDataJsonService) => {
+  //   expect(service).toBeTruthy();
+  // }));
 });
