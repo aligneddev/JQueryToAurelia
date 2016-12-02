@@ -14,7 +14,7 @@ import { EnergyDetailsComponent } from './energy/energy-details/energy-details.c
 
 // Imports for loading & configuring the in-memory web api
 // https://angular.io/docs/ts/latest/tutorial/toh-pt6.html
-// import {AppModule} from 'angular-in-memory-web-api';
+// import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
 // import { InMemoryDataService }  from './in-memory-data.service';
 
 // this allows us to inject the interface

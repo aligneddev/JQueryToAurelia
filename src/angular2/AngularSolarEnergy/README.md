@@ -104,7 +104,10 @@ clicking on the row will navigate to the details view using the router.
 `ng test` run Karma tests
 `ng e2e` via Protractor (Selenium)
 
+The first commit with tests passing is 'Both tests are passing! - energy.component configured correctly to run' aa25b9b.
+
 I like having the spec files next to the component code.
+
 This seems really complicated with testing coupled to the html of the component, but can allow for testing of the binding and clicks in unit tests.
 
 from the default energy.component.spec.ts created by the CLI
@@ -118,6 +121,25 @@ app/testing/router-stubs.ts copied from [the Plunker](https://angular.io/resourc
 * stub the router-outlet and others in the router-stubs.ts and override in app.component.spec.ts
   * with `TestBed.configureTestingModule({ declarations: [`
 
+'Error: No provider for Http!' => add to the `TestBed.configureTestingModule({ imports: [HttpModule]`
+
+### Testing EnergyDataService
+
+Fake the HttpModule
+
+* use the `@angular/http/testing` and import MockBackend and MockConnection
+* see energy-data.service.spec.ts. I learned from http-hero.service.spec.ts [go to the plunker and download the zip](https://angular.io/docs/ts/latest/guide/testing.html#!#top)
+
+### Types of tests to write
+
+* unit tests against the ts file using `var component = new MyComponent();`
+* unit tests with the DOM involved using `TestBed.configureTestingModule({` and
+    `let fixture = TestBed.createComponent(AppComponent);
+     let app = fixture.debugElement.componentInstance;`
+  * This might be a good way to get the [testing pyramid](http://martinfowler.com/bliki/TestPyramid.html) (most unit tests, some integration/service, least UI)
+* e2e tests using protractor to run through the UI itself
+  * you could use Selenium through C# as well
+  * when are the unit tests with the DOM enough
 
 Resources:
 
@@ -126,7 +148,14 @@ Resources:
 * [A Test-Driven Development Introduction to Angular 2](https://keyholesoftware.com/2016/05/16/test-driven-intro-angular2/)  2016-05-16 (beta)
 * [Testing Angular 2 in 15min](https://youtu.be/bR7JbyjT8ZM) 2016-10-21
 * [Testing all your Tasks - Julie Ralph](https://youtu.be/DltUEDy7ItY?list=PLOETEcp3DkCq788xapkP_OU-78jhTf68j) 2016-05-04
+* [Testing Angular 2.0.x Services and Http with Jasmine and Karma](http://chariotsolutions.com/blog/post/testing-angular-2-0-x-services-http-jasmine-karma/)
 
+
+## Angular 2 Observations
+
+* save to running in browser is 2 to 5 seconds on this very small app
+* Testing looks very deep with options to test the HTML binding and clicks without Automated UI tests
+  * 4+ hours later I still don't have a handle on it
 
 ## Ahead of Time Compilation
 

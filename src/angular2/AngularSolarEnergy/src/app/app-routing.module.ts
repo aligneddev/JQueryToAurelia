@@ -5,7 +5,6 @@ import { ModuleWithProviders } from '@angular/core';
 import { EnergyComponent } from './energy/energy.component';
 import { EnergyDetailsComponent } from './energy/energy-details/energy-details.component';
 
-
 const routes: Routes = [
     { path: '', redirectTo: '/energy', pathMatch: 'full' },
     { path: 'energy', component: EnergyComponent },
@@ -18,4 +17,5 @@ export const routing: ModuleWithProviders = RouterModule.forRoot(routes);
   imports: [ RouterModule.forRoot(routes) ],
   exports: [ RouterModule ]
 })
+
 export class AppRoutingModule {}
