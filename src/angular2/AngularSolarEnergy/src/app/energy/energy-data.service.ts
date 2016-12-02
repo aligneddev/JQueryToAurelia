@@ -6,12 +6,13 @@ import { Http, Response } from '@angular/http';
 // we could do rx with observable and map for streams of data coming in
 import 'rxjs/add/operator/toPromise';
 import EnergyDataDto from './energyDataDto';
+import {IEnergyDataService} from './energy-data-service.interface';
 
 /**
  * Interact with the Api.
  */
 @Injectable()
-export default class EnergyDataService {
+export default class EnergyDataService implements IEnergyDataService {
     private yearOptions: string[] = [];
     private energyDataCache: EnergyDataDto[] = [];
     protected apiUrl = '/api/';

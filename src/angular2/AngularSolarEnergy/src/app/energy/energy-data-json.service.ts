@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import EnergyDataService from './energy-data.service';
+import {IEnergyDataService} from './energy-data-service.interface';
 
 /**
  * Get the data directly from the JSON files.

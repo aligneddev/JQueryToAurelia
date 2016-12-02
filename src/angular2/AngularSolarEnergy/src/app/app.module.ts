@@ -15,6 +15,8 @@ import { EnergyDetailsComponent } from './energy/energy-details/energy-details.c
 // https://angular.io/docs/ts/latest/tutorial/toh-pt6.html
 // import {AppModule} from 'angular-in-memory-web-api';
 // import { InMemoryDataService }  from './in-memory-data.service';
+import { OpaqueToken } from '@angular/core';
+export let IEnergyDataService = new OpaqueToken('./energy/energy-data-service.interface');
 
 @NgModule({
   declarations: [
@@ -30,7 +32,7 @@ import { EnergyDetailsComponent } from './energy/energy-details/energy-details.c
     AppRoutingModule,
     NgbModule.forRoot()
   ],
-  providers: [EnergyDataJsonService],
+  providers: [{provide: IEnergyDataService, useValue: EnergyDataJsonService}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

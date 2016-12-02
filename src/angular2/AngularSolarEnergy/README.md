@@ -41,7 +41,14 @@ However, I then changed it just to grab the json from the energy-data.service.ts
 I considered a component for each row (as I did in Aurelia with the EnergyDataRowViewModel and template.html), but (click) on the tr should work fine.
 I will consider changing the Aurelia approach, but that was done to show the templating/component feature in that project.
 
-### external libraries
+## Dependency Injection with Interfaces
+
+[It's possible with an Opaque Token](https://angular.io/docs/ts/latest/guide/dependency-injection.html#!#opaquetoken)
+
+Example is the IEnergyDataService that the EnergyDataService and EnergyDataJsonService. I want to be able to switch between JSON, api calling one, or a test data service in the app.module.ts or in a spec.
+
+
+## external libraries
 
 Bringing in BootStrap
 Using the [ng-BootStrap](https://ng-bootstrap.github.io/#/getting-started).
@@ -73,6 +80,37 @@ clicking on the row will navigate to the details view using the router.
 ## Tools
 
 [Chrome Extension](https://augury.angular.io/guides/)
+
+## Testing
+
+(see more details below)
+`ng test` run Karma tests
+`ng e2e` via Protractor (Selenium)
+
+I like having the spec files next to the component code.
+This seems really complicated with testing coupled to the html of the component?
+
+from the default energy.component.spec.ts created by the CLI
+`Chrome 54.0.2840 (Windows 7 0.0.0) EnergyComponent should create FAILED
+        Can't bind to 'ngModel' since it isn't a known property of 'select'. ("
+        </div>
+        <div class="row">`
+
+app/testing/router-stubs.ts copied from [the Plunker](https://angular.io/resources/live-examples/testing/ts/app-specs.plnkr.html) [in the testing guide](https://angular.io/docs/ts/latest/guide/testing.html#!#sample-app)
+
+* stub the router-outlet and others in the router-stubs.ts and override in app.component.spec.ts
+  * with `TestBed.configureTestingModule({ declarations: [`
+
+
+Resources:
+
+* [Angular2 (2.0.0-beta.13 so things have changed :-()) TDD in ES6](https://www.youtube.com/watch?v=2u7mHBCCSQ4)
+* [Testing Strategies with Angular 2](https://youtu.be/f493Xf0F2yU) from Angular Connect 10/01/2016
+
+
+## Ahead of Time Compilation
+
+I need to learn more about this option [Docs on Aot](https://angular.io/docs/ts/latest/cookbook/aot-compiler.html). This probably happens with `ng build`.
 
 ## This was copied from CLI generated Readme
 
