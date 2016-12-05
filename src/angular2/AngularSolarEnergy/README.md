@@ -100,7 +100,8 @@ clicking on the row will navigate to the details view using the router.
 
 ## Testing
 
-(see more details below)
+[Testing docs](https://angular.io/docs/ts/latest/guide/testing.html)
+
 `ng test` run Karma tests
 `ng e2e` via Protractor (Selenium)
 
@@ -170,6 +171,7 @@ Other Resources:
 * [Testing Angular 2.0.x Services and Http with Jasmine and Karma](http://chariotsolutions.com/blog/post/testing-angular-2-0-x-services-http-jasmine-karma/)
 * [Angular 2 — Testing Guide](https://medium.com/google-developer-experts/angular-2-testing-guide-a485b6cb1ef0#.44er2v45r)
 * [Vikram Subramanian (@vikerman): Unit Tests for Angular 2 Applications at ng-europe 2016](https://youtu.be/dVtDnvTLaIo) - October 29, 2016
+* [Assert the urls in the service](http://stackoverflow.com/questions/40977555/unit-test-and-assert-http-get-querystring-call-in-angular2/40978432#40978432)
 
 ## Angular 2 Observations
 
