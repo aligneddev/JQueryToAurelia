@@ -1,0 +1,512 @@
+[
+        {
+            "__metadata": {
+                "id": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=36,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "uri": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=36,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "type": "UnitedNations.Energy.Values"
+            },
+            "DataSeriesId": "ES",
+            "CountryId": 36,
+            "CountryName": "Australia",
+            "TransactionCode": "01",
+            "CommodityTransactionId": "ES01",
+            "CommodityTransactionName": "Electricity - solar production, public",
+            "Year": 2007,
+            "Unit": "Kilowatt-hours, million",
+            "Quantity": 10,
+            "FootnoteSequenceId": "0"
+        },
+        {
+            "__metadata": {
+                "id": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=40,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "uri": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=40,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "type": "UnitedNations.Energy.Values"
+            },
+            "DataSeriesId": "ES",
+            "CountryId": 40,
+            "CountryName": "Austria",
+            "TransactionCode": "01",
+            "CommodityTransactionId": "ES01",
+            "CommodityTransactionName": "Electricity - solar production, public",
+            "Year": 2007,
+            "Unit": "Kilowatt-hours, million",
+            "Quantity": 17,
+            "FootnoteSequenceId": "0"
+        },
+        {
+            "__metadata": {
+                "id": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=56,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "uri": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=56,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "type": "UnitedNations.Energy.Values"
+            },
+            "DataSeriesId": "ES",
+            "CountryId": 56,
+            "CountryName": "Belgium",
+            "TransactionCode": "01",
+            "CommodityTransactionId": "ES01",
+            "CommodityTransactionName": "Electricity - solar production, public",
+            "Year": 2007,
+            "Unit": "Kilowatt-hours, million",
+            "Quantity": 6,
+            "FootnoteSequenceId": "0"
+        },
+        {
+            "__metadata": {
+                "id": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=116,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "uri": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=116,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "type": "UnitedNations.Energy.Values"
+            },
+            "DataSeriesId": "ES",
+            "CountryId": 116,
+            "CountryName": "Cambodia",
+            "TransactionCode": "01",
+            "CommodityTransactionId": "ES01",
+            "CommodityTransactionName": "Electricity - solar production, public",
+            "Year": 2007,
+            "Unit": "Kilowatt-hours, million",
+            "Quantity": 0,
+            "FootnoteSequenceId": "0"
+        },
+        {
+            "__metadata": {
+                "id": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=124,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "uri": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=124,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "type": "UnitedNations.Energy.Values"
+            },
+            "DataSeriesId": "ES",
+            "CountryId": 124,
+            "CountryName": "Canada",
+            "TransactionCode": "01",
+            "CommodityTransactionId": "ES01",
+            "CommodityTransactionName": "Electricity - solar production, public",
+            "Year": 2007,
+            "Unit": "Kilowatt-hours, million",
+            "Quantity": 26,
+            "FootnoteSequenceId": "0"
+        },
+        {
+            "__metadata": {
+                "id": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=196,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "uri": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=196,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "type": "UnitedNations.Energy.Values"
+            },
+            "DataSeriesId": "ES",
+            "CountryId": 196,
+            "CountryName": "Cyprus",
+            "TransactionCode": "01",
+            "CommodityTransactionId": "ES01",
+            "CommodityTransactionName": "Electricity - solar production, public",
+            "Year": 2007,
+            "Unit": "Kilowatt-hours, million",
+            "Quantity": 2,
+            "FootnoteSequenceId": "0"
+        },
+        {
+            "__metadata": {
+                "id": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=203,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "uri": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=203,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "type": "UnitedNations.Energy.Values"
+            },
+            "DataSeriesId": "ES",
+            "CountryId": 203,
+            "CountryName": "Czech Republic",
+            "TransactionCode": "01",
+            "CommodityTransactionId": "ES01",
+            "CommodityTransactionName": "Electricity - solar production, public",
+            "Year": 2007,
+            "Unit": "Kilowatt-hours, million",
+            "Quantity": 2,
+            "FootnoteSequenceId": "0"
+        },
+        {
+            "__metadata": {
+                "id": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=208,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "uri": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=208,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "type": "UnitedNations.Energy.Values"
+            },
+            "DataSeriesId": "ES",
+            "CountryId": 208,
+            "CountryName": "Denmark",
+            "TransactionCode": "01",
+            "CommodityTransactionId": "ES01",
+            "CommodityTransactionName": "Electricity - solar production, public",
+            "Year": 2007,
+            "Unit": "Kilowatt-hours, million",
+            "Quantity": 2,
+            "FootnoteSequenceId": "0"
+        },
+        {
+            "__metadata": {
+                "id": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=232,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "uri": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=232,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "type": "UnitedNations.Energy.Values"
+            },
+            "DataSeriesId": "ES",
+            "CountryId": 232,
+            "CountryName": "Eritrea",
+            "TransactionCode": "01",
+            "CommodityTransactionId": "ES01",
+            "CommodityTransactionName": "Electricity - solar production, public",
+            "Year": 2007,
+            "Unit": "Kilowatt-hours, million",
+            "Quantity": 2,
+            "FootnoteSequenceId": "0"
+        },
+        {
+            "__metadata": {
+                "id": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=246,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "uri": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=246,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "type": "UnitedNations.Energy.Values"
+            },
+            "DataSeriesId": "ES",
+            "CountryId": 246,
+            "CountryName": "Finland",
+            "TransactionCode": "01",
+            "CommodityTransactionId": "ES01",
+            "CommodityTransactionName": "Electricity - solar production, public",
+            "Year": 2007,
+            "Unit": "Kilowatt-hours, million",
+            "Quantity": 4,
+            "FootnoteSequenceId": "0"
+        },
+        {
+            "__metadata": {
+                "id": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=251,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "uri": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=251,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "type": "UnitedNations.Energy.Values"
+            },
+            "DataSeriesId": "ES",
+            "CountryId": 251,
+            "CountryName": "France incl. Monaco",
+            "TransactionCode": "01",
+            "CommodityTransactionId": "ES01",
+            "CommodityTransactionName": "Electricity - solar production, public",
+            "Year": 2007,
+            "Unit": "Kilowatt-hours, million",
+            "Quantity": 16,
+            "FootnoteSequenceId": "0"
+        },
+        {
+            "__metadata": {
+                "id": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=276,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "uri": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=276,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "type": "UnitedNations.Energy.Values"
+            },
+            "DataSeriesId": "ES",
+            "CountryId": 276,
+            "CountryName": "Germany",
+            "TransactionCode": "01",
+            "CommodityTransactionId": "ES01",
+            "CommodityTransactionName": "Electricity - solar production, public",
+            "Year": 2007,
+            "Unit": "Kilowatt-hours, million",
+            "Quantity": 3075,
+            "FootnoteSequenceId": "0"
+        },
+        {
+            "__metadata": {
+                "id": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=300,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "uri": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=300,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "type": "UnitedNations.Energy.Values"
+            },
+            "DataSeriesId": "ES",
+            "CountryId": 300,
+            "CountryName": "Greece",
+            "TransactionCode": "01",
+            "CommodityTransactionId": "ES01",
+            "CommodityTransactionName": "Electricity - solar production, public",
+            "Year": 2007,
+            "Unit": "Kilowatt-hours, million",
+            "Quantity": 1,
+            "FootnoteSequenceId": "0"
+        },
+        {
+            "__metadata": {
+                "id": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=382,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "uri": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=382,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "type": "UnitedNations.Energy.Values"
+            },
+            "DataSeriesId": "ES",
+            "CountryId": 382,
+            "CountryName": "Italy and San Marino",
+            "TransactionCode": "01",
+            "CommodityTransactionId": "ES01",
+            "CommodityTransactionName": "Electricity - solar production, public",
+            "Year": 2007,
+            "Unit": "Kilowatt-hours, million",
+            "Quantity": 38,
+            "FootnoteSequenceId": "0"
+        },
+        {
+            "__metadata": {
+                "id": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=392,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "uri": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=392,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "type": "UnitedNations.Energy.Values"
+            },
+            "DataSeriesId": "ES",
+            "CountryId": 392,
+            "CountryName": "Japan",
+            "TransactionCode": "01",
+            "CommodityTransactionId": "ES01",
+            "CommodityTransactionName": "Electricity - solar production, public",
+            "Year": 2007,
+            "Unit": "Kilowatt-hours, million",
+            "Quantity": 8,
+            "FootnoteSequenceId": "0"
+        },
+        {
+            "__metadata": {
+                "id": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=410,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "uri": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=410,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "type": "UnitedNations.Energy.Values"
+            },
+            "DataSeriesId": "ES",
+            "CountryId": 410,
+            "CountryName": "Republic of Korea",
+            "TransactionCode": "01",
+            "CommodityTransactionId": "ES01",
+            "CommodityTransactionName": "Electricity - solar production, public",
+            "Year": 2007,
+            "Unit": "Kilowatt-hours, million",
+            "Quantity": 71,
+            "FootnoteSequenceId": "0"
+        },
+        {
+            "__metadata": {
+                "id": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=418,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "uri": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=418,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "type": "UnitedNations.Energy.Values"
+            },
+            "DataSeriesId": "ES",
+            "CountryId": 418,
+            "CountryName": "Lao People's Democratic Republic",
+            "TransactionCode": "01",
+            "CommodityTransactionId": "ES01",
+            "CommodityTransactionName": "Electricity - solar production, public",
+            "Year": 2007,
+            "Unit": "Kilowatt-hours, million",
+            "Quantity": 193.3,
+            "FootnoteSequenceId": "<ROOT><fnSeqID>1</fnSeqID></ROOT>"
+        },
+        {
+            "__metadata": {
+                "id": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=442,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "uri": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=442,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "type": "UnitedNations.Energy.Values"
+            },
+            "DataSeriesId": "ES",
+            "CountryId": 442,
+            "CountryName": "Luxembourg",
+            "TransactionCode": "01",
+            "CommodityTransactionId": "ES01",
+            "CommodityTransactionName": "Electricity - solar production, public",
+            "Year": 2007,
+            "Unit": "Kilowatt-hours, million",
+            "Quantity": 21,
+            "FootnoteSequenceId": "0"
+        },
+        {
+            "__metadata": {
+                "id": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=484,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "uri": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=484,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "type": "UnitedNations.Energy.Values"
+            },
+            "DataSeriesId": "ES",
+            "CountryId": 484,
+            "CountryName": "Mexico",
+            "TransactionCode": "01",
+            "CommodityTransactionId": "ES01",
+            "CommodityTransactionName": "Electricity - solar production, public",
+            "Year": 2007,
+            "Unit": "Kilowatt-hours, million",
+            "Quantity": 9,
+            "FootnoteSequenceId": "0"
+        },
+        {
+            "__metadata": {
+                "id": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=528,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "uri": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=528,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "type": "UnitedNations.Energy.Values"
+            },
+            "DataSeriesId": "ES",
+            "CountryId": 528,
+            "CountryName": "Netherlands",
+            "TransactionCode": "01",
+            "CommodityTransactionId": "ES01",
+            "CommodityTransactionName": "Electricity - solar production, public",
+            "Year": 2007,
+            "Unit": "Kilowatt-hours, million",
+            "Quantity": 36,
+            "FootnoteSequenceId": "0"
+        },
+        {
+            "__metadata": {
+                "id": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=583,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "uri": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=583,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "type": "UnitedNations.Energy.Values"
+            },
+            "DataSeriesId": "ES",
+            "CountryId": 583,
+            "CountryName": "Micronesia, Federated States of",
+            "TransactionCode": "01",
+            "CommodityTransactionId": "ES01",
+            "CommodityTransactionName": "Electricity - solar production, public",
+            "Year": 2007,
+            "Unit": "Kilowatt-hours, million",
+            "Quantity": 3,
+            "FootnoteSequenceId": "<ROOT><fnSeqID>1</fnSeqID></ROOT>"
+        },
+        {
+            "__metadata": {
+                "id": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=608,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "uri": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=608,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "type": "UnitedNations.Energy.Values"
+            },
+            "DataSeriesId": "ES",
+            "CountryId": 608,
+            "CountryName": "Philippines",
+            "TransactionCode": "01",
+            "CommodityTransactionId": "ES01",
+            "CommodityTransactionName": "Electricity - solar production, public",
+            "Year": 2007,
+            "Unit": "Kilowatt-hours, million",
+            "Quantity": 1,
+            "FootnoteSequenceId": "0"
+        },
+        {
+            "__metadata": {
+                "id": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=620,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "uri": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=620,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "type": "UnitedNations.Energy.Values"
+            },
+            "DataSeriesId": "ES",
+            "CountryId": 620,
+            "CountryName": "Portugal",
+            "TransactionCode": "01",
+            "CommodityTransactionId": "ES01",
+            "CommodityTransactionName": "Electricity - solar production, public",
+            "Year": 2007,
+            "Unit": "Kilowatt-hours, million",
+            "Quantity": 24,
+            "FootnoteSequenceId": "0"
+        },
+        {
+            "__metadata": {
+                "id": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=646,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "uri": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=646,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "type": "UnitedNations.Energy.Values"
+            },
+            "DataSeriesId": "ES",
+            "CountryId": 646,
+            "CountryName": "Rwanda",
+            "TransactionCode": "01",
+            "CommodityTransactionId": "ES01",
+            "CommodityTransactionName": "Electricity - solar production, public",
+            "Year": 2007,
+            "Unit": "Kilowatt-hours, million",
+            "Quantity": 0.2,
+            "FootnoteSequenceId": "0"
+        },
+        {
+            "__metadata": {
+                "id": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=686,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "uri": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=686,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "type": "UnitedNations.Energy.Values"
+            },
+            "DataSeriesId": "ES",
+            "CountryId": 686,
+            "CountryName": "Senegal",
+            "TransactionCode": "01",
+            "CommodityTransactionId": "ES01",
+            "CommodityTransactionName": "Electricity - solar production, public",
+            "Year": 2007,
+            "Unit": "Kilowatt-hours, million",
+            "Quantity": 0,
+            "FootnoteSequenceId": "0"
+        },
+        {
+            "__metadata": {
+                "id": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=710,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "uri": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=710,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "type": "UnitedNations.Energy.Values"
+            },
+            "DataSeriesId": "ES",
+            "CountryId": 710,
+            "CountryName": "South Africa",
+            "TransactionCode": "01",
+            "CommodityTransactionId": "ES01",
+            "CommodityTransactionName": "Electricity - solar production, public",
+            "Year": 2007,
+            "Unit": "Kilowatt-hours, million",
+            "Quantity": 21,
+            "FootnoteSequenceId": "0"
+        },
+        {
+            "__metadata": {
+                "id": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=724,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "uri": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=724,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "type": "UnitedNations.Energy.Values"
+            },
+            "DataSeriesId": "ES",
+            "CountryId": 724,
+            "CountryName": "Spain",
+            "TransactionCode": "01",
+            "CommodityTransactionId": "ES01",
+            "CommodityTransactionName": "Electricity - solar production, public",
+            "Year": 2007,
+            "Unit": "Kilowatt-hours, million",
+            "Quantity": 508,
+            "FootnoteSequenceId": "0"
+        },
+        {
+            "__metadata": {
+                "id": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=757,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "uri": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=757,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "type": "UnitedNations.Energy.Values"
+            },
+            "DataSeriesId": "ES",
+            "CountryId": 757,
+            "CountryName": "Switzerland-Liechtenstein",
+            "TransactionCode": "01",
+            "CommodityTransactionId": "ES01",
+            "CommodityTransactionName": "Electricity - solar production, public",
+            "Year": 2007,
+            "Unit": "Kilowatt-hours, million",
+            "Quantity": 27,
+            "FootnoteSequenceId": "0"
+        },
+        {
+            "__metadata": {
+                "id": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=826,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "uri": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=826,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "type": "UnitedNations.Energy.Values"
+            },
+            "DataSeriesId": "ES",
+            "CountryId": 826,
+            "CountryName": "United Kingdom",
+            "TransactionCode": "01",
+            "CommodityTransactionId": "ES01",
+            "CommodityTransactionName": "Electricity - solar production, public",
+            "Year": 2007,
+            "Unit": "Kilowatt-hours, million",
+            "Quantity": 11,
+            "FootnoteSequenceId": "0"
+        },
+        {
+            "__metadata": {
+                "id": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=840,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "uri": "https://api.datamarket.azure.com/Data.ashx/UnitedNations/Energy/v1/Values(CountryId=840,DataSeriesId='ES',TransactionCode='01',Year=2007)",
+                "type": "UnitedNations.Energy.Values"
+            },
+            "DataSeriesId": "ES",
+            "CountryId": 840,
+            "CountryName": "United States",
+            "TransactionCode": "01",
+            "CommodityTransactionId": "ES01",
+            "CommodityTransactionName": "Electricity - solar production, public",
+            "Year": 2007,
+            "Unit": "Kilowatt-hours, million",
+            "Quantity": 689,
+            "FootnoteSequenceId": "0"
+        }
+]

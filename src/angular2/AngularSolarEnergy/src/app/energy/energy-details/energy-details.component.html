@@ -1,0 +1,11 @@
+	<section>
+		<h1>Details for {{selectedEnergyData.countryName}} in {{selectedEnergyData.year}}</h1>
+		<ul>
+			<li><b>Quantity:</b> {{selectedEnergyData.quantity}}</li>
+			<li><b>Year:</b> {{selectedEnergyData.year}}</li>
+			<li><b>TransactionName:</b> {{selectedEnergyData.commodityTransactionName}}</li>
+			<li><b>Unit:</b> {{selectedEnergyData.unit}}</li>
+		</ul>
+		<br />
+		<button (click)="goBack()">Back to Main</button>
+	</section>

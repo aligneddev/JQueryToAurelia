@@ -1,0 +1,30 @@
+<div id="auto-energyHeaderRow" class="row">
+  Energy information from: https://datamarket.azure.com/browse/data?price=free, https://api.datamarket.azure.com/UnitedNations/Energy/
+</div>
+<div class="row">
+  <select [(ngModel)]="selectedYearOption" (ngModelChange)="yearOptionSelected($event)">
+      <option *ngFor="let option of yearOptions" [ngValue]="option">
+          {{option}}
+      </option>
+  </select>
+</div>
+
+<div class="row" style="margin-top: 20px; max-width:900px;">
+  <div class="table-responsive">
+    <table class="table table-condensed table-hover">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Country</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of energyData" (click)=showDetails(data)>
+          <td>{{data.countryId}}</td>
+          <td>{{data.countryName}}</td>
+          <td>{{data.quantity}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
