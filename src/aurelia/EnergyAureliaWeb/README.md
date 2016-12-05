@@ -1,6 +1,10 @@
 # Aurelia Energy Demo
 
-## Started from: Aurelia with ASP.NET Core using TypeScript
+[Install .Net Core](http://dot.net)
+
+
+
+## Started from: Aurelia with ASP.NET Core using TypeScript Skeleton Navigation
 
 This skeleton works both with and without Visual Studio; however, the steps for getting up and running are different for these two scenarios. Please follow the correct set of instructions based on whether or not you are using Visual Studio.
 
@@ -19,7 +23,7 @@ Additional Prerequisites:
 - [ASP.NET Core](https://www.microsoft.com/net/core#windows) must be downloaded and installed. The directions for doing this are [here](https://www.microsoft.com/net/core#windows).
 
 1. Open the solution file `skeleton-typescript-aspnetcore.sln`. This file is located up two directories from the file. Visual Studio will automatically run `npm install`, `jspm install`, and `typings install` when you first open the solution. You may rerun these commands at any time by running `npm install` from the same directory this readme file is in.
-1. Open `Task Runner Explorer`. 
+1. Open `Task Runner Explorer`.
 1. The project is ready to be run when `Task Runner Explorer` shows that it is running the `gulp watch` command. 
 1. Press `F5` or click the `Run` button in Visual Studio. Visual Studio will launch your browser for you and navigate to the correct URL.
 
