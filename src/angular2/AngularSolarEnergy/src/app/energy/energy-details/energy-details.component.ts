@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Inject, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import 'rxjs/add/operator/switchMap';
 
-import EnergyDataJsonService from 'app/energy/energy-data-json.service';
+import {IEnergyDataService} from 'app/energy/energy-data-service.interface';
+import {IEnergyDataServiceToken} from 'app/energy/energy-data-service.token';
+
 import EnergyDataDto from '../energyDataDto';
 
 @Component({
@@ -13,7 +15,7 @@ import EnergyDataDto from '../energyDataDto';
 })
 export class EnergyDetailsComponent implements OnInit {
   public selectedEnergyData: EnergyDataDto =  new EnergyDataDto();
-  constructor(private energyDataService: EnergyDataJsonService,
+  constructor(@Inject(IEnergyDataServiceToken) private energyDataService: IEnergyDataService,
     private route: ActivatedRoute,
     private location: Location) { }
 
