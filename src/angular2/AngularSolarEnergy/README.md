@@ -132,16 +132,35 @@ Fake the HttpModule
 
 ### Types of tests to write
 
+My Thoughts
+
 * unit tests against the ts file using `var component = new MyComponent();`
 * unit tests with the DOM involved using `TestBed.configureTestingModule({` and
     `let fixture = TestBed.createComponent(AppComponent);
      let app = fixture.debugElement.componentInstance;`
   * This might be a good way to get the [testing pyramid](http://martinfowler.com/bliki/TestPyramid.html) (most unit tests, some integration/service, least UI)
-* e2e tests using protractor to run through the UI itself
-  * you could use Selenium through C# as well
-  * when are the unit tests with the DOM enough
+* End to End (e2e) tests using Protractor to run through the UI itself
+  * you could use Selenium through C# instead
+  * when are the unit tests with the DOM enough?
 
-Resources:
+[Three Ways to Test Angular 2](https://vsavkin.com/three-ways-to-test-angular-2-components-dcea8e90bd8d#.z0725oe1e)
+Notes:
+From the image at the top.
+
+* Isolated tests
+  * no rendering
+  * same as ny other JS Object
+  * Mock all dependencies
+* Shallow tests
+  * Isolated Tests++
+  * Render the Template without the Children
+  * using `TestBed.configureTestingModule(` and `TestBed.createComponent(ConversationsCmp);`
+* Integration Tests
+  * Render Components
+  * Check Components
+  * Only Mock Browser Capabilities
+
+Other Resources:
 
 * [Angular2 (2.0.0-beta.13 so things have changed :-()) TDD in ES6](https://www.youtube.com/watch?v=2u7mHBCCSQ4)
 * [Testing Strategies with Angular 2](https://youtu.be/f493Xf0F2yU) from Angular Connect 10/01/2016
@@ -149,7 +168,8 @@ Resources:
 * [Testing Angular 2 in 15min](https://youtu.be/bR7JbyjT8ZM) 2016-10-21
 * [Testing all your Tasks - Julie Ralph](https://youtu.be/DltUEDy7ItY?list=PLOETEcp3DkCq788xapkP_OU-78jhTf68j) 2016-05-04
 * [Testing Angular 2.0.x Services and Http with Jasmine and Karma](http://chariotsolutions.com/blog/post/testing-angular-2-0-x-services-http-jasmine-karma/)
-
+* [Angular 2 — Testing Guide](https://medium.com/google-developer-experts/angular-2-testing-guide-a485b6cb1ef0#.44er2v45r)
+* [Vikram Subramanian (@vikerman): Unit Tests for Angular 2 Applications at ng-europe 2016](https://youtu.be/dVtDnvTLaIo) - October 29, 2016
 
 ## Angular 2 Observations
 

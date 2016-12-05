@@ -64,12 +64,13 @@ describe('Given the EnergyDataService', () => {
       });
     })));
 
-    // TODO
-    xit('should use year in query string', async(inject([], () => {
+    it('should use year in query string', async(inject([], () => {
+      spyOn(service, 'getEnergyDataApiUrl').and.callThrough();
       backend.connections.subscribe((c: MockConnection) => c.mockRespond(response));
       service.getEnergyData('2007').then(data => {
-        debugger;
-        expect(false).toBeTruthy();
+        // I was hoping to use backendend somehow instead, but it's out of scope
+        // http://stackoverflow.com/questions/40977555/unit-test-and-assert-http-get-querystring-call-in-angular2
+        expect((<any>service).getEnergyDataApiUrl).toHaveBeenCalledWith('2007');
       });
     })));
     it('should be OK returning no data points', async(inject([], () => {
