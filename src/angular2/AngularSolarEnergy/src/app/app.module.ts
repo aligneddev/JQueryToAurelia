@@ -11,6 +11,7 @@ import EnergyDataJsonService from './energy/energy-data-json.service';
 import {IEnergyDataServiceToken} from './energy/energy-data-service.token';
 
 import { EnergyDetailsComponent } from './energy/energy-details/energy-details.component';
+import { NotesComponent } from './energy/notes/notes.component';
 
 // Imports for loading & configuring the in-memory web api
 // https://angular.io/docs/ts/latest/tutorial/toh-pt6.html
@@ -24,7 +25,8 @@ import { EnergyDetailsComponent } from './energy/energy-details/energy-details.c
   declarations: [
     AppComponent,
     EnergyComponent,
-    EnergyDetailsComponent
+    EnergyDetailsComponent,
+    NotesComponent
   ],
   imports: [
     BrowserModule,

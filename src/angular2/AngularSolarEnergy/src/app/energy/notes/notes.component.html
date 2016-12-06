@@ -1,0 +1,30 @@
+<h1>Notes</h1>
+
+<form #notesForm="ngForm" *ngIf="active" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="noteNameInput">New Note</label>
+    <input type="text" id="noteNameInput" class="form-control" required minlength="4" maxlength="20" 
+      name="noteNameInput" [(ngModel)]="currentNote.name" />
+  </div>
+  <div *ngIf="formErrors.noteNameInput" class="alert alert-danger">
+    {{ formErrors.noteNameInput }}
+  </div>
+  <div class="form-group">
+    <label for="noteBodyInput">Note Body</label>
+    <textarea id="noteBodyInput" class="form-control" required minlength="4" maxlength="250" 
+      name="noteBodyInput" [(ngModel)]="currentNote.body"></textarea>
+  </div>
+  <div *ngIf="formErrors.noteBodyInput" class="alert alert-danger">
+    {{ formErrors.noteBodyInput }}
+  </div>
+  <button type="submit" class="btn btn-default">Add Note</button>
+  <!--[disabled]="!notesForm.form.valid"-->
+</form>
+<hr />
+<h2>Existing Notes</h2>
+<ul>
+  <li *ngFor="let note of notes">
+    <strong>{{ note.name }}</strong> <br /><br />
+    {{ note.body }}
+  </li>
+</ul>

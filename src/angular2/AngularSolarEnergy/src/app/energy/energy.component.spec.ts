@@ -18,6 +18,7 @@ import EnergyDataJsonService from './energy-data-json.service';
 import { IEnergyDataServiceToken } from './energy-data-service.token';
 import { EnergyComponent } from './energy.component';
 import { EnergyDetailsComponent } from './energy-details/energy-details.component';
+import { NotesComponent } from './notes/notes.component';
 
 describe('EnergyComponent', () => {
   let component: EnergyComponent;
@@ -27,7 +28,8 @@ describe('EnergyComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         EnergyComponent,
-        EnergyDetailsComponent
+        EnergyDetailsComponent,
+        NotesComponent
       ],
       // could replace with a test data service or use the in-memory-data-service idea.
       providers: [

@@ -175,9 +175,21 @@ Other Resources:
 
 ## Angular 2 Observations
 
-* save to running in browser is 2 to 5 seconds on this very small app
+* save to running in browser is 2 to 5 seconds on this very small app, sometimes up to 10 seconds
 * Testing looks very deep with options to test the HTML binding and clicks without Automated UI tests
   * 4+ hours later I still don't have a handle on it
+* debugging in Chrome gets clunky with webpack's giant main.bundle.js (1.6mb of RAM at one point)
+
+## Forms Example
+
+As a user
+I want to be able to keep Notes on my observations
+So that I can analyze better
+
+These will only be stored in memorgy and not persist for this demo.
+
+[Angular Docs](https://angular.io/docs/ts/latest/cookbook/form-validation.html)
+Template-driven forms can't have isolated unit tests. See the "Testing Considerations" at the bottom of the page. "While not difficult, this takes more time, work and skill". If I had seen that earlier, I may have done the reactive forms approach instead.
 
 ## Ahead of Time Compilation
 
