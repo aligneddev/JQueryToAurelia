@@ -10,7 +10,8 @@ const routes: Routes = [
   { path: '', redirectTo: '/energy', pathMatch: 'full' },
   { path: 'energy', component: EnergyComponent },
   { path: 'energy-details/:id/:year', component: EnergyDetailsComponent },
-  { path: 'notes', component: NotesComponent }
+  { path: 'notes', component: NotesComponent },
+  { path: '*', redirectTo : '/energy' }
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(routes);
