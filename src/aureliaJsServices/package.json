@@ -1,5 +1,5 @@
 {
-  "name": "aureliaJsServices",
+  "name": "aurelia-javascript-services",
   "version": "0.0.0",
   "dependencies": {
     "aurelia-bootstrapper-webpack": "^1.0.0",
