@@ -18,7 +18,7 @@ import { NotesComponent } from './energy/notes/notes.component';
 // import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
 // import { InMemoryDataService }  from './in-memory-data.service';
 
-// this allows us to inject the interface
+// in InMemoryDataService allows us to inject the interface
 // https://angular.io/docs/ts/latest/guide/dependency-injection.html#!#opaquetoken
 
 @NgModule({

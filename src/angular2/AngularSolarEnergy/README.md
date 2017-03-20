@@ -4,7 +4,7 @@
 
 I'm using Angular 2.0 and the latest [Angular CLI](https://cli.angular.io/). I used Visual Studio Code for my editor, but any text editor or IDE should work.
 
-`npm install -g angular-cli@latest`
+`npm install -g @angular/cli`
 I created the project using `ng new`.
 
 ### Run the site
