@@ -30,7 +30,7 @@ export class InMemoryDataService implements InMemoryDbService {
 
   private generateYearOptions() {
     return [
-      'all',
+      'All',
       '1990',
       '2000',
       '2007'

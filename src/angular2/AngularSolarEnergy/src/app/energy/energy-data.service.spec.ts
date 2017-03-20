@@ -30,7 +30,7 @@ describe('Given the EnergyDataService', () => {
     it('should return values', async(inject([], () => {
       service.getYearOptions().then((data) => {
         expect(data.length).toBeGreaterThan(1);
-        expect(data[0]).toBe('all');
+        expect(data[0]).toBe('All');
       });
     })));
   });
@@ -58,7 +58,7 @@ describe('Given the EnergyDataService', () => {
     }));
     it('should return fake values', async(inject([], () => {
       backend.connections.subscribe((c: MockConnection) => c.mockRespond(response));
-      service.getEnergyData('all').then(data => {
+      service.getEnergyData('All').then(data => {
         expect(data.length).toBe(1);
         expect(data[0].countryName).toBe('Denmark');
       });
@@ -81,7 +81,7 @@ describe('Given the EnergyDataService', () => {
       let resp = new Response(new ResponseOptions({ status: 200, body: { data: [] } }));
       backend.connections.subscribe((c: MockConnection) => c.mockRespond(resp));
 
-      service.getEnergyData('all').then(data => {
+      service.getEnergyData('All').then(data => {
           expect(data.length).toBe(0);
         });
     })));

@@ -12,7 +12,7 @@ import {IEnergyDataServiceToken} from './energy-data-service.token';
 })
 export class EnergyComponent implements OnInit {
   public yearOptions: string[] = [];
-  public selectedYearOption = 'all';
+  public selectedYearOption = 'All';
   public energyData: EnergyDataDto[] = [];
   constructor(@Inject(IEnergyDataServiceToken) private energyDataService: IEnergyDataService, private router: Router) {
   }

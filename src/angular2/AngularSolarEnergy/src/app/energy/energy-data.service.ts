@@ -35,7 +35,7 @@ export default class EnergyDataService implements IEnergyDataService {
         // }).catch(this.handleError);
 
         return Promise.resolve([
-            'all',
+            'All',
             '1990',
             '2000',
             '2007'
@@ -58,7 +58,7 @@ export default class EnergyDataService implements IEnergyDataService {
     }
 
     public getEnergyDataByIdAndYear(countryId: string, year: number): Promise<EnergyDataDto> {
-        if (<any>year === 'all') {
+        if (<any>year === '') {
             throw new Error('Do not pass in all!');
         }
 
