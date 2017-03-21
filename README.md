@@ -2,6 +2,8 @@
 
 For my SD Code Camp November 6th, 2016 (http://www.southdakotacodecamp.com/sessions/clean-javascript,4) talk (probably only active until 2017, see text below).
 
+Edit: [Read my series that goes with this code](http://www.aligneddev.net/blog/2016/JavaScript-Mess-To-CleanerCode-Intro-And-Step-1/).
+
 I've talked to many who complain about JavaScript and don't view it as real development. Web development continues to grow and along with that comes larger JavaScript applications and a never ending flow of new frameworks and tools. Based on my experience this summer with interns (http://geekswithblogs.net/Aligned/archive/2016/08/24/teaching-javascript.aspx) and over the last years of working on a large JavaScript driven application, I've learned that JavaScript code can be readable and maintainable using methodologies that we've adopted in C#, Java etc. SOLID principles, good naming practices and Object Orientated can all be used to create JavaScript applications.
 
 In this talk, I'll start from a jQuery driven UI (grid with filtering) and move through steps to clean up the code. We'll look at OOP, inversion of control approaches, TypeScript, Jasmine (unit testing). Then we'll convert jQuery code into KnockoutJs to see how data-binding tools can help reduce DOM manipulations and simplify code. If there's time we'll touch on RequireJs (module loading) and show the same solution in Aurelia (a framework that does even more for us).
@@ -46,6 +48,7 @@ Using Data from https://api.datamarket.azure.com/UnitedNations/Energy/ with my f
 
 https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882
 https://cleancoders.com/episode/clean-code-episode-1/view
+http://aligneddev.net/resources
 
 ## Business Requirements
 
