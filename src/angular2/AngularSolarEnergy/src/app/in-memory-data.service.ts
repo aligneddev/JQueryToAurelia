@@ -54,6 +54,6 @@ export class InMemoryDataService implements InMemoryDbService {
       status: STATUS.OK
     });
 
-    return createObservableResponse(resp);
+    return createObservableResponse(interceptorArgs.requestInfo.req, resp);
   }
 }

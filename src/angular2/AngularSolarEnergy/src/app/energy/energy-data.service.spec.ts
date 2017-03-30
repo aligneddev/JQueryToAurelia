@@ -65,7 +65,7 @@ describe('Given the EnergyDataService', () => {
     })));
 
     it('should use year in query string', async(inject([], () => {
-      spyOn(service, 'getEnergyDataApiUrl').and.callThrough();
+      spyOn(service as any, 'getEnergyDataApiUrl').and.callThrough();
       backend.connections.subscribe((c: MockConnection) => {
         c.mockRespond(response);
 
