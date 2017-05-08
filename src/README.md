@@ -58,4 +58,4 @@ Show a loading indicator for at least 500 ms while loading data
 
 ## Aurelia
 
-I've move the Aurelia implementation to https://github.com/aligneddev/aureliaEnergyJSServices using the JavaScriptService `dotnet new aurelia` project.
+See my [Aurelia implementation](https://github.com/aligneddev/aureliaEnergyJSServices) using the [JavaScriptServices](https://github.com/aspnet/JavaScriptServices) `dotnet new aurelia` project for the code and [my article](http://www.aligneddev.net/blog/2016/JavaScript-Mess-To-CleanerCode-Step-4/) for more information. 
