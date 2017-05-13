@@ -20,6 +20,7 @@
 							<th>#</th>
 							<th>Country</th>
 							<th>Quantity</th>
+                            <th>Year</th>
 						</tr>
 					</thead>
 					<tbody data-bind="foreach: energyData">
@@ -61,6 +62,7 @@
 	<td data-bind="text: model.countryId"></td>
 	<td data-bind="text: model.countryName"></td>
 	<td data-bind="text: model.quantity"></td>
+    <td data-bind="text: model.year"></td>
 </script> @section scripts {
 <environment names="Development">
 	<script src="~/lib/requirejs/require.js"></script>
