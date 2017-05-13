@@ -30,12 +30,12 @@ namespace jQueryToAurelia.Web.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Solar(int yearSelection)
+        public async Task<IActionResult> Solar(int year)
         {
-            string year = yearSelection == 0 ? "all" : yearSelection.ToString();
+            string yearSelection = year == 0 ? "all" : year.ToString();
 
             // https://docs.asp.net/en/latest/fundamentals/file-providers.html?highlight=files#recommendations-for-use-in-apps
-            var jsonPath = $@"data\SolarEnergy{year}.json";
+            var jsonPath = $@"data\SolarEnergy{yearSelection}.json";
             var json = await this.ReadTextAsync(jsonPath);
             try
             {

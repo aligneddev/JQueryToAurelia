@@ -59,7 +59,9 @@ app.prototype.fillTableWithData = function(data){
             $('#dataTable > tbody:last-child').append('<tr>'
                 + '<td>' + item.countryId + '</td>'
                 + '<td>' + item.countryName + '</td>'
-                + '<td>' + item.quantity + '</td>');
+                + '<td>' + item.quantity + '</td>'
+                + '<td>' + item.year + '</td>'
+            );
         });
 };
 
